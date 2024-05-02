@@ -185,7 +185,7 @@ body {
   }
   
   .column:hover {
-      transform: scale(1.09);
+    transform: scale(1.046);
     outline: 1.3px solid #38b752;
     box-shadow: 0 0 10px 2px #38b752;
   }
@@ -374,3 +374,29 @@ body {
   .tt_embed{
     display: none;
   }
+
+  #view-indicator {
+    position: fixed;
+    bottom: 20px;
+    right: 50px;
+    padding: 10px;
+    text-align: center; /* Center the text horizontally */
+  }
+  
+  #view-count {
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5px; /* Adjust the spacing between the icon and the text */
+    display: block; /* Ensure the text is displayed as a block */
+  }
+  
+  #view-indicator img {
+    width: 70px;
+    height: 60px;
+    position: absolute; /* Position the image absolutely */
+    top: -65px; /* Adjust the distance from the top of the container */
+    left: 50%; /* Center the image horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+  }
+  
+  

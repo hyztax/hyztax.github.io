@@ -53,8 +53,16 @@ function toggleColumnVisibility() {
   requestAnimationFrame(Openk)
 
 
-  
 
+// Update live viewers count
+function updateLiveViewersCount() {
+  const viewCountElement = document.getElementById('view-count');
+  const liveViewers = fetchLiveViewers();
+  viewCountElement.textContent = liveViewers;
+}
+
+// Update count every second (1000 milliseconds)
+setInterval(updateLiveViewersCount, 1000);
 
  
   
