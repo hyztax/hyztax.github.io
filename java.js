@@ -60,7 +60,7 @@ function toggleColumnVisibility() {
 function fetchLiveViewers() {
   // Here, you can implement your logic to fetch live viewers count from your server/database
   // For demonstration purpose, let's return a random number
-  const randomNumber = Math.floor(Math.random() * 40);
+  const randomNumber = Math.floor(Math.random() * 0);
   // Add 1 to the random number to include your device
   return randomNumber + 1;
 }
