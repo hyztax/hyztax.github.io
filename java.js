@@ -1,3 +1,6 @@
+
+
+
 function toggleColumnVisibility() {
     var discordIframe = document.getElementById("discord-iframe");
   
@@ -13,11 +16,12 @@ function toggleColumnVisibility() {
     var modal = document.getElementById("myModal");
     modal.style.display = "block";
   }
-  
+  let close1 = false;
   function closeModal() {
     var modal = document.getElementById("myModal");
     modal.style.display = "none";
   }
+
   
   // Close the modal if the user clicks outside the modal content
   window.onclick = function(event) {
@@ -25,6 +29,7 @@ function toggleColumnVisibility() {
     if (event.target == modal) {
       modal.style.display = "none";
     }
+
   }
   
   function openModal() {
@@ -36,30 +41,31 @@ function toggleColumnVisibility() {
       modal.style.display = "block";
     }
   }
-  let close1 = false;
-  const popup = document.getElementById('open_popup');
 
-  function Open() {
+  
 
+  function Openk() {
+    const popupDiv = document.getElementById("OpenTiktok");
 
-    close1 = !close1;
-
-    if (!close1) {
-      popup.style.display = "none";
-
+    if (close1) {
+      popupDiv.style.display = "block";
     }
     else {
-      popup.style.display = "block";
+      popupDiv.style.display = "none";
+    }
+    window.onclick = function(event) {
+      if (event.target == popupDiv) {
+        popupDiv.style.display = "none";
+        close1 = !close1;
+      }
+  
     }
 
+    requestAnimationFrame(Openk)
   }
+  requestAnimationFrame(Openk)
 
-  popup.addEventListener("mouseleave", function() {
-    if (close1) {
-      popup.style.display = "none"
-      close1 = !close1; 
-    }
-  });
+
   
 
 
