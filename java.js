@@ -36,7 +36,24 @@ function toggleColumnVisibility() {
       modal.style.display = "block";
     }
   }
-  
+  let close1 = false;
+
+  function Open() {
+    const popup = document.getElementById('open_popup');
+
+    close1 = !close1;
+
+    if (!close1) {
+      popup.style.display = "none";
+
+    }
+    else {
+      popup.style.display = "block";
+    }
+
+  }
+
+ 
   
     
   

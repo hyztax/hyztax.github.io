@@ -5,7 +5,9 @@ body {
   body {
     height: 100%;
   }
-  
+  blockquote{
+    overflow:auto hidden;
+  }
   body {
     font-family: Arial, sans-serif;
   }
@@ -123,7 +125,15 @@ body {
     }
   }
   
-  
+  .tiktok{
+    position: fixed;
+    bottom: 13px;
+    left: 104px;
+    transform: scale(1);
+    transform-origin: right bottom;
+    z-index: 0;
+  }
+
   /* CSS for the columns */
   .column {
     display: flex;
@@ -356,4 +366,6 @@ body {
     background-attachment: fixed;
   }
   
-  
+  .tt_embed{
+    display: none;
+  }
