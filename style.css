@@ -185,7 +185,7 @@ body {
   }
   
   .column:hover {
-      transform: scale(1.09);
+      transform: scale(1.046);
     outline: 1.3px solid #38b752;
     box-shadow: 0 0 10px 2px #38b752;
   }
