@@ -91,3 +91,5 @@ setInterval(updateLiveViewersCount, 2000);
 
 // Call detectDevice function to detect user agent information
 detectDevice();
+
+
