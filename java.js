@@ -37,9 +37,10 @@ function toggleColumnVisibility() {
     }
   }
   let close1 = false;
+  const popup = document.getElementById('open_popup');
 
   function Open() {
-    const popup = document.getElementById('open_popup');
+
 
     close1 = !close1;
 
@@ -52,6 +53,15 @@ function toggleColumnVisibility() {
     }
 
   }
+
+  popup.addEventListener("mouseleave", function() {
+    if (close1) {
+      popup.style.display = "none"
+      close1 = !close1; 
+    }
+  });
+  
+
 
  
   
