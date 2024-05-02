@@ -378,7 +378,7 @@ body {
   #view-indicator {
     position: fixed;
     bottom: 10px;
-    right: 50px;
+    right: 30px;
     padding: 10px;
     text-align: center; /* Center the text horizontally */
   }
