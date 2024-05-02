@@ -34,7 +34,14 @@ body {
   /* Different background for phone devices */
   @media only screen and (max-width: 468px) {
     body {
+      flex-direction: column;
+      justify-content: center;
+      height: 96.4vh;
+      margin: 0;
       background-image: url('https://www.hdwallpapers.in/download/plant_leaves_water_drops_dark_background_4k_hd_nature-HD.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: -1;
     }
   }
   
@@ -346,19 +353,17 @@ body {
   .game {
     text-align: center;
   }
-  
-  /* Optional: Add styles for images */
-  .game img {
-    max-width: 100%;
-    height: auto;
-  }
-  
   /* Optional: Add styles for images */
   .game img {
     max-width: 100%;
     height: auto;
     border-radius: 15px;
     /* Adjust the border-radius to make the edges more round */
+  }
+  .gameres {
+    max-width: 25%;
+    height: auto;
+    border-radius: 15px;
   }
   
   body {

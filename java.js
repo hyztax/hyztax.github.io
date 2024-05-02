@@ -11,23 +11,16 @@ function toggleColumnVisibility() {
     }
   }
   
-  
-  function openModal() {
-    var modal = document.getElementById("myModal");
-    modal.style.display = "block";
-  }
   let close1 = false;
 
   
-  // Close the modal if the user clicks outside the modal content
-
-  
   function openModal() {
+    var modal = document.getElementById("myModal");
+
     var isMobileDevice = /Mobi/i.test(window.navigator.userAgent);
     if (isMobileDevice) {
       alert("This device do not meet the requirements to run this action");
     } else {
-      var modal = document.getElementById("myModal");
       modal.style.display = "block";
     }
   }
