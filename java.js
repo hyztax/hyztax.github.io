@@ -54,17 +54,22 @@ function toggleColumnVisibility() {
 
 
 
-// Update live viewers count
+
+
+// Function to update live viewers count
 function updateLiveViewersCount() {
   const viewCountElement = document.getElementById('view-count');
-  const liveViewers = fetchLiveViewers();
-  viewCountElement.textContent = liveViewers;
+  let count = localStorage.getItem('viewCount') || 0; // Get count from local storage, default to 0
+  if (!localStorage.getItem('visited')) { // If user hasn't visited before
+    count++; // Increment count
+    localStorage.setItem('visited', true); // Set visited flag in local storage
+    localStorage.setItem('viewCount', count); // Update count in local storage
+  }
+  viewCountElement.textContent = count; // Update count displayed on the page
 }
+
+// Update count when the page loads
+updateLiveViewersCount();
 
 // Update count every second (1000 milliseconds)
 setInterval(updateLiveViewersCount, 1000);
-
- 
-  
-    
-  
