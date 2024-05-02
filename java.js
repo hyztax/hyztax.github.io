@@ -17,20 +17,10 @@ function toggleColumnVisibility() {
     modal.style.display = "block";
   }
   let close1 = false;
-  function closeModal() {
-    var modal = document.getElementById("myModal");
-    modal.style.display = "none";
-  }
 
   
   // Close the modal if the user clicks outside the modal content
-  window.onclick = function(event) {
-    var modal = document.getElementById("myModal");
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
 
-  }
   
   function openModal() {
     var isMobileDevice = /Mobi/i.test(window.navigator.userAgent);
@@ -57,6 +47,10 @@ function toggleColumnVisibility() {
       if (event.target == popupDiv) {
         popupDiv.style.display = "none";
         close1 = !close1;
+      }
+      var modal = document.getElementById("myModal");
+      if (event.target == modal) {
+        modal.style.display = "none";
       }
   
     }
