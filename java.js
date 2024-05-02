@@ -56,20 +56,20 @@ function toggleColumnVisibility() {
 
 
 
-// Function to update live viewers count
+
 function updateLiveViewersCount() {
   const viewCountElement = document.getElementById('view-count');
-  let count = parseInt(sessionStorage.getItem('viewCount')) || 0; // Get count from session storage, default to 0
-  if (!sessionStorage.getItem('visited')) { // If user hasn't visited before in this session
-    count++; // Increment count
-    sessionStorage.setItem('visited', true); // Set visited flag in session storage
-    sessionStorage.setItem('viewCount', count); // Update count in session storage
+  let count = parseInt(sessionStorage.getItem('viewCount')) || 0; 
+  if (!sessionStorage.getItem('visited')) { 
+    count++; 
+    sessionStorage.setItem('visited', true);
+    sessionStorage.setItem('viewCount', count); 
   }
-  viewCountElement.textContent = count; // Update count displayed on the page
+  viewCountElement.textContent = count; 
 }
 
-// Update count when the page loads
+
 updateLiveViewersCount();
 
-// Update count every second (1000 milliseconds)
+
 setInterval(updateLiveViewersCount, 1000);
