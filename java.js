@@ -56,19 +56,26 @@ function toggleColumnVisibility() {
 
 
 
-// Function to fetch live viewers count (dummy implementation)
-function fetchLiveViewers() {
-  // Here, you can implement your logic to fetch live viewers count from your server/database
-  // For demonstration purpose, let's return a random number
-  const randomNumber = Math.floor(Math.random() * 0);
-  // Add 1 to the random number to include your device
-  return randomNumber + 1;
+// Function to fetch live viewers count from server
+async function fetchLiveViewers() {
+  try {
+    // Fetch the live viewers count from the server
+    const response = await fetch('/api/live-viewers');
+    if (!response.ok) {
+      throw new Error('Failed to fetch live viewers count');
+    }
+    const data = await response.json();
+    return data.liveViewers;
+  } catch (error) {
+    console.error(error);
+    return 0; // Return 0 if there's an error
+  }
 }
 
-// Function to update live viewers count
-function updateLiveViewersCount() {
+// Function to update live viewers count on the webpage
+async function updateLiveViewersCount() {
   const viewCountElement = document.getElementById('view-count');
-  const liveViewers = fetchLiveViewers();
+  const liveViewers = await fetchLiveViewers();
   viewCountElement.textContent = liveViewers;
 }
 
@@ -84,4 +91,3 @@ setInterval(updateLiveViewersCount, 2000);
 
 // Call detectDevice function to detect user agent information
 detectDevice();
-
