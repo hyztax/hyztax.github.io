@@ -1,0 +1,359 @@
+body {
+    background-color: black;
+  }
+  
+  body {
+    height: 100%;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Disable scrolling for computers */
+  @media (min-width: 769px) {
+    body {
+      overflow: hidden;
+    }
+  }
+  
+  
+  body {
+    flex-direction: column;
+    justify-content: center;
+    height: 96.4vh;
+    margin: 0;
+    background-image: url('https://www.hdwallpapers.in/download/plant_leaves_water_drops_dark_background_4k_hd_nature-HD.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+  
+  /* Different background for phone devices */
+  @media only screen and (max-width: 468px) {
+    body {
+      background-image: url('https://www.hdwallpapers.in/download/plant_leaves_water_drops_dark_background_4k_hd_nature-HD.jpg');
+    }
+  }
+  
+  
+  
+  .site_name {
+    margin-top: 30px;
+    font-size: xxx-large;
+    text-align: center;
+    font-family: Lucida Sans
+  }
+  
+  
+  .hello_text {
+    display: none;
+    /* Initially hide the element on all screen sizes */
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #fff;
+  }
+  
+  /* Apply the styles for larger screen sizes, e.g., tablets and desktops */
+  @media (min-width: 768px) {
+    .hello_text {
+      display: block;
+      /* Show the element on screens with a width of 768px or larger */
+    }
+  }
+  
+  
+  .undertext {
+    position: absolute;
+    top: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 17px;
+    color: #ffff
+  }
+  
+  
+  .länk1 {
+    position: absolute;
+    top: 15px;
+    right: 116px;
+  }
+  
+  .länk2 {
+    position: absolute;
+    top: 15px;
+    right: 237px;
+  }
+  
+  .discord {
+    position: fixed;
+    bottom: 25px;
+    left: 28px;
+    transform: scale(1);
+    transform-origin: right bottom;
+  
+  
+  }
+  
+  @media (max-width: 768px) {
+    .discord {
+      transform: scale(1.2);
+      /* You can adjust the scale factor as needed for mobile devices */
+    }
+  }
+  
+  .youtube {
+    position: fixed;
+    bottom: 15px;
+    left: 68px;
+    transform: scale(1);
+    transform-origin: right bottom;
+    z-index: 0;
+  
+  
+  }
+  
+  @media (max-width: 768px) {
+    .youtube {
+      transform: scale(1.2);
+      /* You can adjust the scale factor as needed for mobile devices */
+    }
+  }
+  
+  
+  /* CSS for the columns */
+  .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 12%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    outline: 1.3px solid #38b752;
+    transition: all 0.4s ease;
+    text-align: center;
+    margin: 60px auto 14px;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 0 10px 2px #38b752;
+  }
+  
+  /* Adjust the width for mobile devices */
+  @media (max-width: 768px) {
+    .column {
+      width: 60%;
+      /* Adjust the width for mobile devices */
+    }
+  }
+  
+  .column-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+    border-radius: 20px;
+  }
+  
+  .column:hover .column-image {
+    display: block;
+  }
+  
+  .column:hover {
+      transform: scale(1.09);
+    outline: 1.3px solid #38b752;
+    box-shadow: 0 0 10px 2px #38b752;
+  }
+  
+  /* CSS for the popup */
+  .column-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+  }
+  
+  .column-popup img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+  
+  /* CSS for the close button */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  
+  
+  
+  @media (max-width: 768px) {
+    .column {
+      font-size: 12px;
+      /* Adjust font size for smaller screens (e.g., tablets) */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .column {
+      font-size: 10px;
+      /* Adjust font size for mobile phones */
+    }
+  }
+  
+  
+  .discord-iframe {
+    margin-top: -350px;
+    margin-left: 50px;
+    width: 350px;
+    height: 500px;
+    z-index: 2;
+  
+  }
+  
+  .discord-iframe iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    /* Removes the iframe border */
+    z-index: 2;
+  }
+  
+  /* Media query for iPhone users */
+  @media only screen and (max-width: 768px) {
+    .discord-iframe {
+      margin-top: 0;
+      margin-left: 21px;
+      z-index: 2;
+      justify-content: enter;
+      align-items: center;
+    }
+  }
+  
+  /* Style the modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Adjust the alpha channel value */
+    animation: slideIn 0.5s forwards;
+  }
+  
+  /* Style the modal content */
+  
+  .modal-content {
+    outline: 1.3px solid #38b752;
+    position: fixed;
+    bottom: -300px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    border-radius: 17px;
+    width: 80%;
+    max-width: 800px;
+    animation: slideUp 0.5s forwards;
+    box-shadow: 0 0 20px 5px #38b752;
+  }
+  
+  
+  
+  /* Animation for modal slide in */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Animation for modal content slide up */
+  @keyframes slideUp {
+    from {
+      bottom: -300px;
+    }
+  
+    to {
+      bottom: 5%;
+      /* Adjust the bottom position percentage as needed */
+    }
+  }
+  
+  /* Reset some default styles */
+  body,
+  h1,
+  h2,
+  p,
+  img {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Style to make text white */
+  .modal-content h2 {
+    color: white;
+  }
+  
+  /* Style for grid layout */
+  .modal-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* Responsive grid layout */
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Style for individual games */
+  .game {
+    text-align: center;
+  }
+  
+  /* Optional: Add styles for images */
+  .game img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Optional: Add styles for images */
+  .game img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    /* Adjust the border-radius to make the edges more round */
+  }
+  
+  body {
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+  

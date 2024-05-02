@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Blayz</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+  <script src="java.js"></script>
+  <!-- Import this CDN to use icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+  
+</head>
+
+<body>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <h1 class="site_name" style="color:white ; font-family:verdana;">TAX HOOD</h1>
+
+  <div class="hello_text">Copyright © All rights reserved</div>
+
+  <div class="undertext">Official site</div>
+
+
+
+  
+  <div class="länk1">
+    <a href="https://discord.com/channels/1094355540001427609/1094363677232210161" ; style="color:white">HELP</a>
+  </div>
+
+  <div class="länk2"><a href="https://1a96bfea-26b1-4c58-8807-d7ef511a5d06-00-k1sbaaxxnf25.kirk.replit.dev/" ;
+      style="color:white">INFO</a>
+  </div>
+
+
+  <a href="https://discord.gg/TaxHood">
+    <img
+      src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png"
+      alt="Discord" class="discord" style="width: 30px; height: 20px;">
+  </a>
+
+  <a href="https://www.youtube.com/@Hyztax">
+    <img
+      src="https://static.vecteezy.com/system/resources/thumbnails/023/986/704/small/youtube-logo-youtube-logo-transparent-youtube-icon-transparent-free-free-png.png"
+      alt="Youtube" class="youtube" style="width: 40px; height: 38px;">
+  </a>
+
+  <div class="column" onclick="openModal()">
+    <h2 style="color: white; cursor: pointer;">My games</h2>
+    <img src="" alt="Game 1 Image" class="column-image">
+  </div>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <!-- Game 1 -->
+      <div class="game">
+        <a href="https://www.roblox.com/games/13702200453/TVH-Make-friends">
+          <img
+            src="https://tr.rbxcdn.com/de1187da733672bd881ee94cd8a8204d/352/352/Image/Png"
+            alt="Game 1 Image">
+        </a>
+      </div>
+
+
+      <!-- Game 2 -->
+      <div class="game">
+        <a href="https://www.roblox.com/games/14097235651/Dead-end">
+          <img
+            src="https://tr.rbxcdn.com/740d92435d5f17757a8a07554ad4bb1b/352/352/Image/Png"
+            alt="Game 2 Image">
+        </a>
+      </div>
+
+
+      <!-- Game 3 -->
+      <div class="game">
+        <a href="https://www.roblox.com/games/12518259780/The-Hangout-UPDATE">
+          <img
+            src="https://tr.rbxcdn.com/0c82e9ffddd21c3f64465e097c41436d/352/352/Image/Png"
+            alt="Game 3 Image">
+        </a>
+      </div>
+
+
+
+
+    </div>
+
+
+    <span class="close" onclick="closeModal()">&times;</span>
+  </div>
+
+
+  <div class="column" onclick="toggleColumnVisibility()">
+    <h2 style="color: white">Chat</h2>
+
+  </div>
+
+
+  <div class="discord-iframe" id="discord-iframe" style="display: none;">
+    <iframe src="https://discord.com/widget?id=1227952102802722876&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+  </div>
+
+
+
+  
+
+
+
+
+  
+
+</html>
