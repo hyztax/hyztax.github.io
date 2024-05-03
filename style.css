@@ -11,7 +11,7 @@ body {
   justify-content: center;
   height: 96.4vh;
   margin: 0;
-  background-image: url('https://www.hdwallpapers.in/download/plant_leaves_water_drops_dark_background_4k_hd_nature-HD.jpg');
+  background-image: url('https://cdn.discordapp.com/attachments/1228262743090528310/1235943303237734480/banner.site.jpg?ex=66363566&is=6634e3e6&hm=309bfd0cf1a6f78a9379369f471bb6b66cae07a97ba9fbfda1cc3a292972191c&');
   background-size: cover;
   background-repeat: no-repeat;
   z-index: -1;
@@ -33,8 +33,8 @@ blockquote{
     justify-content: center;
     height: 96.4vh;
     margin: 0;
-    background-image: url('https://www.hdwallpapers.in/download/plant_leaves_water_drops_dark_background_4k_hd_nature-HD.jpg');
-    background-size: cover;
+    background-image: url('https://cdn.discordapp.com/attachments/1228262743090528310/1235943303237734480/banner.site.jpg?ex=66363566&is=6634e3e6&hm=309bfd0cf1a6f78a9379369f471bb6b66cae07a97ba9fbfda1cc3a292972191c&');
+    background-size: stretch;
     background-repeat: no-repeat;
     z-index: -1;
   }
@@ -73,34 +73,35 @@ blockquote{
   font-family:verdana;
 }
 
-.Button_Style{
+.Button_Style {
   display: flex;
   flex-direction: column;
+  outline: 1px #fff;
   align-items: center;
   justify-content: center;
   width: 25%;
   height: 12%;
   padding: 10px;
-  background-image: linear-gradient( to bottom,
-  rgba(70, 70, 70, 0.8),
-  rgba(40, 40, 40, 0.8),
-  rgba(10, 10, 10, 0.8));
-  background-color: rgba(0, 0, 0, 0.6);
-  outline: 0px solid #000000;
-  transition: all 0.4s ease;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.4),
+    rgba(43, 172, 97, 0) 90%
+  );
+
+  transition: all 0.5s ease;
   text-align: center;
   margin: 60px auto 14px;
   border-radius: 20px;
   position: relative;
-  box-shadow: 0 0 10px 2px rgb(17, 17, 17);
-  color: rgb(155, 167, 163);
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.253);
+  color: rgb(179, 185, 183);
   text-shadow: 0 0px 5px rgb(0, 0, 0);
-  font-family:verdana;
+  font-family: verdana;
   transform: scale(1);
-  
-
 }
-  
+
 .column-image {
   width: 100%;
   height: 100%;
@@ -119,7 +120,7 @@ blockquote{
 
 .Button_Style:hover {
   transform: scale(1.04) translateY(-2px);
-  box-shadow: 0 0 20px 2px rgb(0, 0, 0);
+  box-shadow: 0 0 20px 2px rgba(173, 171, 171, 0.507);
 }
 
 .column-popup {
@@ -272,6 +273,41 @@ body, h1, h2, p, img {
 }
 
 
+#SnapChat-btn {
+  transition: all 0.4s ease;
+}
+
+#SnapChat-btn:hover {
+  transform: scale(1.04) translateY(-3px);
+}
+
+#Tiktok-btn {
+  transition: all 0.4s ease;
+}
+
+#Tiktok-btn:hover {
+  transform: scale(1.04) translateY(-3px);
+}
+
+#Youtube-btn {
+  transition: all 0.4s ease;
+}
+
+#Youtube-btn:hover {
+  transform: scale(1.04) translateY(-3px);
+}
+
+#Discord-btn {
+  transition: all 0.4s ease;
+}
+
+#Discord-btn:hover {
+  transform: scale(1.04) translateY(-3px);
+}
+
+
+
+
 body {
   background-size: cover;
   background-attachment: fixed;
@@ -286,6 +322,8 @@ body {
   align-items: center;
   margin-left: -195%;
 }
+
+
 .Center-Anchors {
   display: flex;
   flex-direction: row;
@@ -331,9 +369,17 @@ body {
 }
 .Logo {
   font-size: 40px;
-  font-family:'Times New Roman';
+  font-family: 'Times New Roman';
   font-weight: 560;
+  transition: all 0.2s ease;
 }
+
+.Logo:hover {
+  color: #cfcccc;
+  transform: scale(1.01);
+}
+
+
 .länk a:visited {
   color: rgb(242, 243, 243);
 }
