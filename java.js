@@ -58,44 +58,21 @@ function toggleColumnVisibility() {
 
     requestAnimationFrame(OpenTiktok)
   }
-  requestAnimationFrame(Openk)
+  requestAnimationFrame(OpenTiktok)
 
+    transform = false;
+function  ShowOnClick(Self) {
+  const Logo = document.getElementById("Logo");
+  transform = !transform;
+    if (transform) {
+      Self.style.right = "-20px";
+      Logo.innerHTML = "&gt;";
 
-
-
-
-// Function to fetch live viewers count from server
-async function fetchLiveViewers() {
-  try {
-    // Fetch the live viewers count from the server
-    const response = await fetch('/api/live-viewers');
-    if (!response.ok) {
-      throw new Error('Failed to fetch live viewers count');
     }
-    const data = await response.json();
-    return data.liveViewers;
-  } catch (error) {
-    console.error(error);
-    return 0; // Return 0 if there's an error
+    else {
+      Self.style.right = "-110px";
+      Logo.innerHTML = "&lt;";
+    }
+
   }
-}
 
-// Function to update live viewers count on the webpage
-async function updateLiveViewersCount() {
-  const viewCountElement = document.getElementById('view-count');
-  const liveViewers = await fetchLiveViewers();
-  viewCountElement.textContent = liveViewers;
-}
-
-// Function to detect user agent information
-function detectDevice() {
-  const userAgent = navigator.userAgent;
-  // Here, you can analyze the user agent string to detect the device, browser, etc.
-  console.log("User Agent:", userAgent);
-}
-
-// Update count every second (1000 milliseconds)
-setInterval(updateLiveViewersCount, 2000);
-
-// Call detectDevice function to detect user agent information
-detectDevice();
