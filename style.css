@@ -85,18 +85,20 @@ blockquote{
   rgba(70, 70, 70, 0.8),
   rgba(40, 40, 40, 0.8),
   rgba(10, 10, 10, 0.8));
-  background-color: rgba(0, 0, 0, 0.5);
-  outline: 1px solid #000000;
+  background-color: rgba(0, 0, 0, 0.6);
+  outline: 0px solid #000000;
   transition: all 0.4s ease;
   text-align: center;
   margin: 60px auto 14px;
   border-radius: 20px;
   position: relative;
-  box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+  box-shadow: 0 0 10px 2px rgb(17, 17, 17);
   color: rgb(155, 167, 163);
   text-shadow: 0 0px 5px rgb(0, 0, 0);
   font-family:verdana;
   transform: scale(1);
+  
+
 }
   
 .column-image {
@@ -116,7 +118,7 @@ blockquote{
 }
 
 .Button_Style:hover {
-  transform: scale(1.1) translateY(-2px);
+  transform: scale(1.04) translateY(-2px);
   box-shadow: 0 0 20px 2px rgb(0, 0, 0);
 }
 
@@ -262,8 +264,13 @@ body, h1, h2, p, img {
   max-width: 100%;
   height: auto;
   border-radius: 15px;
-
+  transition: all 0.4s ease;
 }
+
+.game img:hover {
+  transform: scale(1.05);
+}
+
 
 body {
   background-size: cover;
@@ -277,6 +284,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: -195%;
 }
 .Center-Anchors {
   display: flex;
@@ -300,11 +308,11 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: 50px;
+  right: -1px;
 }
 .LogoBtnPressed {
   transform: rotate(180deg);
-  margin-right: 150px;
+  margin-right: 160px;
 }
 
 .ShowOnHover {
@@ -314,7 +322,7 @@ body {
   right: -110px;
   bottom: 50%;
   transform: translateY(50%);
-  transition: all 0.3s ease;
+  transition: all 0.56s ease;
   z-index: 10;
   border-radius: 15px;
   color: rgb(255, 255, 255);
