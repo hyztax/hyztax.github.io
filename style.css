@@ -441,3 +441,31 @@ body {
 .ScrollAble::-webkit-scrollbar-thumb:hover {
   background-color: rgb(58, 55, 55);
 }
+
+
+.html_länk {
+  color: white;
+  position: fixed;
+  top: 0;
+  margin-top: 30px;
+  left: 0;
+  margin-left: 30px;
+  padding: 10px;
+  background-color: rgba(58, 55, 55, 0.397);
+  border-radius: 10px;
+  font-weight: 400;
+  text-decoration: none; 
+}
+
+.html_länk {
+  position: fixed;
+  margin-top: 30px;
+  margin-left: 45px;
+  padding: 10px;
+  background-color: rgba(39, 37, 37, 0.397);
+  border-radius: 12px;
+}
+
+.html_länk a:visited {
+  color: white;
+}
