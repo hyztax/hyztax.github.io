@@ -1,3 +1,11 @@
+const Discord = document.getElementById("Discord-btn");
+const Youtube = document.getElementById("Youtube-btn");
+const Tiktok = document.getElementById("Tiktok-btn");
+
+let OldBtn = "";
+let DiscordStyle = {Transform: "", src: "https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png", width: 30, height: 20};
+let YoutubeStyle = {Transform: "", src: "https://static.vecteezy.com/system/resources/thumbnails/023/986/704/small/youtube-logo-youtube-logo-transparent-youtube-icon-transparent-free-free-png.png", width: 40, height: 38};
+let TiktokStyle = {Transform: "", src: "https://i.pinimg.com/originals/69/50/5f/69505fac2e3f272646db6cf81547d4c2.png", width: 47, height: 42};
 
 
 
@@ -27,7 +35,7 @@ function toggleColumnVisibility() {
 
   
 
-  function Openk() {
+  function OpenTiktok() {
     const popupDiv = document.getElementById("OpenTiktok");
 
     if (close1) {
@@ -48,7 +56,7 @@ function toggleColumnVisibility() {
   
     }
 
-    requestAnimationFrame(Openk)
+    requestAnimationFrame(OpenTiktok)
   }
   requestAnimationFrame(Openk)
 
@@ -91,5 +99,3 @@ setInterval(updateLiveViewersCount, 2000);
 
 // Call detectDevice function to detect user agent information
 detectDevice();
-
-
