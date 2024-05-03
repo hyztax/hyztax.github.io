@@ -218,7 +218,7 @@ blockquote{
   width: 80%;
   max-width: 800px;
   animation: slideUp 0.5s forwards;
-  box-shadow: 0 0 20px 5px rgb(47, 49, 49);
+  box-shadow: 0 0 20px 5px rgba(177, 226, 226, 0.733);
 }
 
 @keyframes slideIn {
