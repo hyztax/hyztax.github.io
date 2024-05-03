@@ -76,6 +76,45 @@ function  ShowOnClick(Self) {
 
   }
 
- 
+  const express = require('express');
+  const bodyParser = require('body-parser');
+  
+  const app = express();
+  const port = 8000;
+  
+  // Store votes
+  let votes = {
+      option1: 0,
+      option2: 0,
+      option3: 0
+  };
+  
+  // Middleware to parse request body
+  app.use(bodyParser.urlencoded({ extended: true }));
+  
+  // Route for submitting votes
+  app.post('/submit_vote', (req, res) => {
+      const { vote } = req.body;
+      
+      // Increment vote count
+      votes[vote]++;
+  
+      // Send updated votes as response
+      res.json(votes);
+  });
+  
+  // Start server
+  app.listen(port, () => {
+      console.log(`Server started on port ${port}`);
+  });
 
+  
+  
+  const TiktokBtn = document.getElementById("Tiktok-btn");
+  const SnapChatBtn = document.getElementById("SnapChat-btn");
+  const DiscordBtn = document.getElementById("Discord-btn");
+  const YoutubeBtn = document.getElementById("Youtube-btn");
+  
+  // Update event listeners and functions to use the new IDs
+  
 

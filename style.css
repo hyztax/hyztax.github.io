@@ -37,6 +37,8 @@ blockquote{
     background-size: stretch;
     background-repeat: no-repeat;
     z-index: -1;
+    overflow: hidden; 
+    position: fixed;
   }
 } 
 
@@ -470,4 +472,27 @@ body {
 
 .html_länk a:visited {
   color: white;
+}
+
+
+#social-buttons-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-button {
+  width: 20%; /* Adjust width as needed */
+  text-align: center;
+}
+
+/* Update styles for individual buttons as needed */
+#Tiktok-btn img,
+#SnapChat-btn img,
+#Discord-btn img,
+#Youtube-btn img {
+  width: 100%; /* Make the buttons smaller */
+  height: auto;
 }
