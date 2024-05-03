@@ -367,6 +367,8 @@ body {
   text-shadow: 0 0 5px rgb(185, 179, 179);
   cursor: pointer;
 }
+
+
 .Logo {
   font-size: 40px;
   font-family: 'Times New Roman';
@@ -405,7 +407,7 @@ body {
 @media only screen and (max-width: 600px) {
   .ScrollAble {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     max-height: 80%;
