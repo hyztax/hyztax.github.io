@@ -1,3 +1,11 @@
+const Discord = document.getElementById("Discord-btn");
+const Youtube = document.getElementById("Youtube-btn");
+const Tiktok = document.getElementById("Tiktok-btn");
+
+let OldBtn = "";
+let DiscordStyle = {Transform: "", src: "https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png", width: 30, height: 20};
+let YoutubeStyle = {Transform: "", src: "https://static.vecteezy.com/system/resources/thumbnails/023/986/704/small/youtube-logo-youtube-logo-transparent-youtube-icon-transparent-free-free-png.png", width: 40, height: 38};
+let TiktokStyle = {Transform: "", src: "https://i.pinimg.com/originals/69/50/5f/69505fac2e3f272646db6cf81547d4c2.png", width: 47, height: 42};
 
 
 
@@ -27,7 +35,7 @@ function toggleColumnVisibility() {
 
   
 
-  function Openk() {
+  function OpenTiktok() {
     const popupDiv = document.getElementById("OpenTiktok");
 
     if (close1) {
@@ -48,46 +56,124 @@ function toggleColumnVisibility() {
   
     }
 
-    requestAnimationFrame(Openk)
+    requestAnimationFrame(OpenTiktok)
   }
-  requestAnimationFrame(Openk)
+  requestAnimationFrame(OpenTiktok)
 
+    transform = false;
+function  ShowOnClick(Self) {
+  const Logo = document.getElementById("Logo");
+  transform = !transform;
+    if (transform) {
+      Self.style.right = "-20px";
+      Logo.innerHTML = "&gt;";
 
-
-
-
-// Function to fetch live viewers count from server
-async function fetchLiveViewers() {
-  try {
-    // Fetch the live viewers count from the server
-    const response = await fetch('/api/live-viewers');
-    if (!response.ok) {
-      throw new Error('Failed to fetch live viewers count');
     }
-    const data = await response.json();
-    return data.liveViewers;
-  } catch (error) {
-    console.error(error);
-    return 0; // Return 0 if there's an error
+    else {
+      Self.style.right = "-110px";
+      Logo.innerHTML = "&lt;";
+    }
+
   }
-}
 
-// Function to update live viewers count on the webpage
-async function updateLiveViewersCount() {
-  const viewCountElement = document.getElementById('view-count');
-  const liveViewers = await fetchLiveViewers();
-  viewCountElement.textContent = liveViewers;
-}
+/*
+Tror jag kommer ta bort det. DEt funkar konstigt
+  document.addEventListener("DOMContentLoaded", function() {
+    const Discord = document.getElementById("Discord-btn");
+    const Youtube = document.getElementById("Youtube-btn");
+    const Tiktok = document.getElementById("Tiktok-btn");
+    Discord.style.transform = "";
+    Discord.style.width = 50 + "px";
+    Discord.style.height = 50 + "px";
+    Discord.src = "Arrow.png";
+  
+    Youtube.style.transform = "";
+    Youtube.style.width = 50 + "px";
+    Youtube.style.height = 50 + "px";
+    Youtube.src = "Arrow.png";
+  
+    Tiktok.style.transform = "";
+    Tiktok.style.width = 50 + "px";
+    Tiktok.style.height = 50 + "px";
+    Tiktok.src = "Arrow.png";
+  });
 
-// Function to detect user agent information
-function detectDevice() {
-  const userAgent = navigator.userAgent;
-  // Here, you can analyze the user agent string to detect the device, browser, etc.
-  console.log("User Agent:", userAgent);
-}
+  function ShowBtn(index) {
+    
+  const Discord = document.getElementById("Discord-btn");
+  const Youtube = document.getElementById("Youtube-btn");
+  const Tiktok = document.getElementById("Tiktok-btn");
+  
+    if (index === 1) {
+      if (OldBtn === Discord) {
+        OldBtn = "";
+        Discord.src = "Arrow.png";
+        Discord.style.width = 50 + "px";
+        Discord.style.height = 50 + "px";
 
-// Update count every second (1000 milliseconds)
-setInterval(updateLiveViewersCount, 2000);
 
-// Call detectDevice function to detect user agent information
-detectDevice();
+      } else {
+        Discord.src = DiscordStyle.src;
+        Discord.style.width = DiscordStyle.width + "px";
+        Discord.style.height = DiscordStyle.height + "px";
+
+        Youtube.src = "Arrow.png";
+        Youtube.style.width = 50 + "px";
+        Youtube.style.height = 50 + "px";
+
+        Tiktok.src = "Arrow.png";
+        Tiktok.style.width = 50+ "px";
+        Tiktok.style.height = 50 + "px";
+        close1 = false;
+        OldBtn = Discord;
+      }
+    } 
+    else if (index === 2) {
+      if (OldBtn === Youtube) {
+        OldBtn = "";
+        Youtube.src = "Arrow.png";
+        Youtube.style.width = 50 + "px";
+        Youtube.style.height = 50 + "px";
+
+
+      } else {
+        Youtube.src = YoutubeStyle.src;
+        Youtube.style.width = YoutubeStyle.width + "px";
+        Youtube.style.height = YoutubeStyle.height + "px";
+
+        Discord.src = "Arrow.png";
+        Discord.style.width = 50 + "px";
+        Discord.style.height = 50 + "px";
+
+        Tiktok.src = "Arrow.png";
+        Tiktok.style.width = 50 + "px";
+        Tiktok.style.height = 50 + "px";  
+        close1 = false;
+        OldBtn = Youtube;
+      }
+    } 
+    else if (index === 3) {
+      if (OldBtn === Tiktok) {
+        OldBtn = "";
+        Tiktok.src = "Arrow.png";
+        Tiktok.style.width = 50 + "px";
+        Tiktok.style.height = 50 + "px";
+
+      } else {
+        Tiktok.src = TiktokStyle.src;
+        Tiktok.style.width = TiktokStyle.width + "px";
+        Tiktok.style.height = TiktokStyle.height + "px";
+
+        Youtube.src = "Arrow.png";
+        Youtube.style.width = 50 + "px";
+        Youtube.style.height = 50 + "px";
+
+        Discord.src = "Arrow.png";
+        Discord.style.width = 50 + "px";
+        Discord.style.height = 50 + "px";
+
+        OldBtn = Tiktok;
+      }
+    }
+  } 
+  */
