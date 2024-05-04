@@ -110,11 +110,5 @@ function  ShowOnClick(Self) {
 
   
   
-  const TiktokBtn = document.getElementById("Tiktok-btn");
-  const SnapChatBtn = document.getElementById("SnapChat-btn");
-  const DiscordBtn = document.getElementById("Discord-btn");
-  const YoutubeBtn = document.getElementById("Youtube-btn");
-  
-  // Update event listeners and functions to use the new IDs
-  
+
 
