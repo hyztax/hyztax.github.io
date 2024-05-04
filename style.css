@@ -39,7 +39,6 @@ body {
 
 
 .hello_text {
-  display: none;
   position: absolute;
   bottom: 15px;
   left: 50%;
