@@ -49,7 +49,7 @@ body {
 
 @media only screen and (max-width: 600px) {
   .Versions{
-    position: absolute;
+    position:absolute;
     bottom: 15px;
     left: 94%;
     transform: translateX(-50%);
