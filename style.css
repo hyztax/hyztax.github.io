@@ -506,17 +506,35 @@ body {
   text-decoration: none; 
 }
 
-.html_länk {
+.tillbaks {
   position: fixed;
-  margin-top: 30px;
+  margin-top: -30px;
   margin-left: 45px;
   padding: 10px;
   background-color: rgba(39, 37, 37, 0.397);
   border-radius: 12px;
 }
 
-.html_länk a:visited {
-  color: white;
+
+@media only screen and (max-width: 600px) {
+  .tillbaks {
+    position: fixed;
+    margin-top: -20px;
+    margin-left: 25px;
+    padding: 10px;
+    background-color: rgba(39, 37, 37, 0.397);
+    border-radius: 12px;
+    width:auto;
+  }
 }
 
 
+.tillbaks a:visited {
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .tillbaks a:visited {
+    color: white;
+  }
+}
