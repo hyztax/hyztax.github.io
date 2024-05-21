@@ -11,7 +11,7 @@ body {
   justify-content: center;
   height: 96.4vh;
   margin: 0;
-  background-image: url('https://media.discordapp.net/attachments/1228262743090528310/1235943303237734480/banner.site.jpg?ex=66398126&is=66382fa6&hm=ea8cd97f1d6dea44ce72a00e5c11b6f9fa63290e097e9cad953a73d2720e9c5a&=&format=webp&width=1246&height=700');
+  background-image: url("/bilder/image.png");
   z-index: -1;
   overflow: hidden;
 }
@@ -20,10 +20,9 @@ body {
   body{
     overflow-x: hidden;
     overflow-y: visible;
-    background-image: url('https://media.discordapp.net/attachments/1228262743090528310/1235943303237734480/banner.site.jpg?ex=66398126&is=66382fa6&hm=ea8cd97f1d6dea44ce72a00e5c11b6f9fa63290e097e9cad953a73d2720e9c5a&=&format=webp&width=1246&height=700');
+    background-image: url('/bilder/grey.jpg');
   }
 }
-
 
 
   
@@ -163,32 +162,6 @@ body {
 }
 
 
-.discord-iframe {
-  margin-top: -350px;
-  margin-left: 50px;
-  width: 350px;
-  height: 500px;
-  z-index: 2;
-
-}
-
-.discord-iframe iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  z-index: 2;
-}
-
-@media only screen and (max-width: 768px) {
-  .discord-iframe {
-    margin-top: 0;
-    margin-left: 21px;
-    z-index: 2;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
 .modal {
   display: none;
   position: fixed;
@@ -202,20 +175,84 @@ body {
   animation: slideIn 0.5s forwards;
 }
 
+@media only screen and (max-width: 600px) {
+  .Flex-For-Btns  {
+    display: none;
+  }
+}
 
 .modal-content {
   outline: 1.3px solid #2c2a2a;
   position: fixed;
   bottom: -300px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
   left: 50%;
+  height: max-content;
   transform: translateX(-50%);
   padding: 20px;
   border-radius: 17px;
-  width: 80%;
+  width: max-content;
   max-width: 800px;
   animation: slideUp 0.5s forwards;
   box-shadow: 0 0 20px 5px rgba(177, 226, 226, 0.733);
 }
+.discord-iframe {
+  position: absolute;
+  top: 40px;
+  left: -140px;
+  width: 350px;
+  height: 450px;
+  z-index: 2;
+}
+
+.FlexForModal {
+  display: flex;
+  flex-direction: row;
+}
+.discord-iframe iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  z-index: 2;
+}
+.discord-iframe {
+  transform: translateX(50%);
+  width: 350px;
+  height: 450px;
+}
+@media (max-width: 960px) {
+
+  .discord-iframe {
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .FlexForModal {
+    flex-direction: column;
+  }
+  .modal-content {
+    width: 50%;
+  }
+}
+
+
+.game {
+  text-align: center;
+  margin: 10px;
+}
+
+.game img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  transition: all 0.4s ease;
+}
+
+.game img:hover {
+  transform: scale(1.05);
+}
+
 
 @keyframes slideIn {
   from {
@@ -245,30 +282,6 @@ body, h1, h2, p, img {
 .modal-content h2 {
   color: white;
 }
-
-.modal-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-.game {
-  text-align: center;
-}
-
-.game img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 15px;
-  transition: all 0.4s ease;
-}
-
-.game img:hover {
-  transform: scale(1.05);
-}
-
-
 #SnapChat-btn {
   transition: all 0.4s ease;
 }
@@ -318,11 +331,6 @@ body {
   align-items: center;
   margin-left: -195%;
   
-}
-@media only screen and (max-width: 600px) {
-  .Flex-For-Btns  {
-    display: none;
-  }
 }
 
 
