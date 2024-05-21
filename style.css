@@ -11,7 +11,7 @@ body {
   justify-content: center;
   height: 96.4vh;
   margin: 0;
-  background-image: url("/bilder/grey.jpg");
+  background-image: url("bilder/image.png");
   z-index: -1;
   overflow: hidden;
 
@@ -21,7 +21,7 @@ body {
   body{
     overflow-x: hidden;
     overflow-y: visible;
-    background-image: url('/bilder/grey.jpg');
+    background-image: url('bilder/grey.jpg');
   }
 }
 
