@@ -11,10 +11,10 @@ body {
   justify-content: center;
   height: 96.4vh;
   margin: 0;
-  background-image: url("/bilder/image.png");
+  background-image: url("/bilder/grey.jpg");
   z-index: -1;
   overflow: hidden;
-  
+
 }
 
 @media only screen and (max-width: 600px) {
