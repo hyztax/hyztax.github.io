@@ -237,7 +237,7 @@ body {
     flex-direction: column;
   }
   .modal-content {
-    width: 50%;
+    width: 45%;
   }
 }
 
@@ -355,9 +355,9 @@ body {
 }
 
 
-.länk, .länk:visited {
+.länk a, .länk a:visited {
   margin: 10px 80px;
-  color: rgb(246, 247, 247) !important;
+  color: white !important;
 }
 
 .länk a {
@@ -442,7 +442,7 @@ body {
 
 
 .länk a:visited {
-  color: rgb(242, 243, 243);
+  color: white;
 }
 .ScrollAble {
   position: absolute;
@@ -528,7 +528,10 @@ body {
   background-color: rgba(39, 37, 37, 0.397);
   border-radius: 12px;
 }
-
+.tillbaks a {
+  
+  color: white !important;
+}
 
 @media only screen and (max-width: 600px) {
   .tillbaks {
@@ -542,10 +545,6 @@ body {
   }
 }
 
-
-.tillbaks a:visited {
-  color: white;
-}
 
 @media only screen and (max-width: 600px) {
   .tillbaks a:visited {
