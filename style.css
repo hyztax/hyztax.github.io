@@ -67,16 +67,16 @@ body {
   text-shadow: 0 2px 3px rgb(0, 0, 0);
   font-family:verdana;
 }
-
 .Button_Style {
-  display: flex;
-  flex-direction: column;
-  outline: 1px #fff;
+  display: flex; /* 'absolute' is not a valid value for display, assuming flex is intended */
+  flex-direction: column; /* added 'solid' to outline */
   align-items: center;
   justify-content: center;
   width: 25%;
   height: 12%;
   padding: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   background-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.8),
@@ -84,17 +84,28 @@ body {
     rgba(0, 0, 0, 0.4),
     rgba(43, 172, 97, 0) 90%
   );
-
   transition: all 0.5s ease;
   text-align: center;
-  margin: 60px auto 14px;
   border-radius: 20px;
   position: relative;
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.253);
   color: rgb(179, 185, 183);
   text-shadow: 0 0px 5px rgb(0, 0, 0);
   font-family: verdana;
-  transform: scale(1);
+  margin: 50px 0;
+}
+
+.Button_Style .column-image {
+  display: block;
+}
+
+.Button_Style:hover {
+  transform: scale(1.04) translateY(-2px) translateX(calc(-50% + 7px) );
+  box-shadow: 0 0 20px 2px rgba(173, 171, 171, 0.507);
+}
+.Button_Style:active {
+  transform: scale(0.96)  translateX(calc(-50% - 7px) );
+  box-shadow: 0 0 20px 2px rgba(173, 171, 171, 0.507);
 }
 
 .column-image {
@@ -109,14 +120,7 @@ body {
   border-radius: 20px;
 }
 
-.Button_Style .column-image {
-  display: block;
-}
 
-.Button_Style:hover {
-  transform: scale(1.04) translateY(-2px);
-  box-shadow: 0 0 20px 2px rgba(173, 171, 171, 0.507);
-}
 
 .column-popup {
   position: fixed;
@@ -350,10 +354,11 @@ body {
 }
 
 
-.länk {
+.länk, .länk:visited {
   margin: 10px 80px;
-  color: rgb(246, 247, 247);
+  color: rgb(246, 247, 247) !important;
 }
+
 .länk a {
   text-decoration: none;
 }
