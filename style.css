@@ -176,8 +176,9 @@ body {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.623);
   animation: slideIn 0.5s forwards;
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -200,12 +201,13 @@ body {
   width: max-content;
   max-width: 800px;
   animation: slideUp 0.5s forwards;
-  box-shadow: 0 0 20px 5px rgba(177, 226, 226, 0.733);
+  box-shadow: 0 0 20px 5px rgba(66, 68, 68, 0.733);
+  background: #00000098;
 }
 .discord-iframe {
   position: absolute;
-  top: 40px;
-  left: -140px;
+  top: 120px;
+  left: -100px;
   width: 350px;
   height: 450px;
   z-index: 2;
