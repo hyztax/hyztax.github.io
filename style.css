@@ -204,43 +204,11 @@ body {
   box-shadow: 0 0 20px 5px rgba(66, 68, 68, 0.733);
   background: #00000098;
 }
-.discord-iframe {
-  position: absolute;
-  top: 120px;
-  left: -100px;
-  width: 350px;
-  height: 450px;
-  z-index: 2;
-}
+
 
 .FlexForModal {
   display: flex;
   flex-direction: row;
-}
-.discord-iframe iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  z-index: 2;
-}
-.discord-iframe {
-  transform: translateX(50%);
-  width: 350px;
-  height: 450px;
-}
-@media (max-width: 960px) {
-
-  .discord-iframe {
-    top: 120px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .FlexForModal {
-    flex-direction: column;
-  }
-  .modal-content {
-    width: 45%;
-  }
 }
 
 
@@ -321,7 +289,13 @@ body, h1, h2, p, img {
   transform: scale(1.04) translateY(-3px);
 }
 
+#Spotify-btn {
+  transition: all 0.4s ease;
+}
 
+#Spotify-btn:hover {
+  transform: scale(1.04) translateY(-3px);
+}
 
 
 body {
@@ -372,11 +346,11 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: -1px;
+  right: -4px;
 }
 .LogoBtnPressed {
   transform: rotate(180deg);
-  margin-right: 160px;
+  margin-right: 170px;
 }
 @media only screen and (max-width: 600px) {
   .LogoBtnPressed {
@@ -389,7 +363,7 @@ body {
   width: 200px;
   height: 50px;
   position: absolute;
-  right: -110px;
+  right: -120px;
   bottom: 50%;
   transform: translateY(50%);
   transition: all 0.56s ease;
@@ -552,4 +526,23 @@ body {
   .tillbaks a:visited {
     color: white;
   }
+}
+.spotifyContainer {
+  display: none;
+}
+
+.spotify-embed {
+  border-radius: 12px;
+  width: 302px;
+  height: 426px;
+  margin-left: 6%;
+  margin-top: -22%;
+  position: static;
+
+}
+
+
+.SPCbtn {
+  background-color: transparent;
+  border: none;
 }

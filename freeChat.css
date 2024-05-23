@@ -1,0 +1,27 @@
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+}
+
+#chat-box {
+    width: 300px;
+    height: 200px;
+    margin-left: 40%;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    background: red;
+    margin-top: 15%;
+}
+
+#message-input {
+    margin-top: 2%;
+    margin-left: 40%;
+    width: 200px;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+#send-button {
+    padding: 5px 10px;
+}

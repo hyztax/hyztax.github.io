@@ -60,7 +60,9 @@
           <img src="bilder/youtube.png"
             id="Youtube-btn" alt="Youtube" class="LogoBtn" style="width: 45px; height: 45px; margin-top: 10px;" onclick="ShowBtn(2)">
         </a>
-
+        <button  class="SPCbtn" onclick="ShowSpotifyCont(this)" id="toggleButton">
+        <img src="bilder/spotify.png" alt="spotify"  class="LogoBtn" style="width: 50px; height: 50px; margin-top: 10px;" id="Spotify-btn">
+        </button>
         <a>
           <img src="bilder/tiktok.png"
             alt="Tiktok" onclick="close1 = !close1; ShowBtn(3)" id="Tiktok-btn" class="LogoBtn"
@@ -86,7 +88,7 @@
       <div class="FlexForModal">
 
         <div class="game">
-          <a href="">
+          <a href="https://www.roblox.com/games/13702200453/TVH-Make-friends">
             <img src="https://tr.rbxcdn.com/de1187da733672bd881ee94cd8a8204d/352/352/Image/Png" alt="Game 1 Image">
           </a>
         </div>
@@ -118,19 +120,16 @@
 
 
   <div class="Button_Style" onmouseleave="toggleColumnVisibility('Wait')" onclick="toggleColumnVisibility('')">
-    <h2>Chat</h2>
+    <h2>Login</h2>
 
   </div>
-
-
-  <div class="discord-iframe" id="discord-iframe" style="display: none;">
-    <iframe src="https://discord.com/widget?id=1227952102802722876&theme=dark" width="360" height="550"
-      allowtransparency="true" frameborder="0"
-      sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-  </div>
-
 
   <div class="Versions">V.5.4</div>
+
+
+  <div id="spotifyContainer" class="spotifyContainer">
+      <iframe class="spotify-embed" src="https://open.spotify.com/embed/playlist/7p9ALjNzssa5ePbcIaWGH2?utm_source=generator" width="302" height="302" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
 
 </body>
 

@@ -34,7 +34,17 @@ function openModal() {
   }
   */
 }
-
+let Clicked = true;
+ function ShowSpotifyCont(Btn) {
+  Clicked = !Clicked;
+  const SPC = document.getElementById('spotifyContainer');
+  if (Clicked) {
+    SPC.style.display = "none";
+  }
+  else {
+    SPC.style.display = "block";
+  }
+ }
 
 
 function OpenTiktok() {
@@ -84,33 +94,31 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 8000;
 
-// Store votes
+
 let votes = {
   option1: 0,
   option2: 0,
   option3: 0
 };
 
-// Middleware to parse request body
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Route for submitting votes
+
 app.post('/submit_vote', (req, res) => {
   const { vote } = req.body;
 
-  // Increment vote count
+  
   votes[vote]++;
 
-  // Send updated votes as response
+ 
   res.json(votes);
 });
 
-// Start server
+
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
-
-
 
 
 
