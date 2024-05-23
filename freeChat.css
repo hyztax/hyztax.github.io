@@ -4,24 +4,40 @@ body {
 }
 
 #chat-box {
-    width: 300px;
-    height: 200px;
-    margin-left: 40%;
+    width: 700px;
+    height: 500px;
     overflow-y: auto;
-    border: 1px solid #ccc;
+    border: 1px solid #828181;
     margin-bottom: 10px;
-    background: red;
-    margin-top: 15%;
+    background: rgb(50, 52, 52);
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(244, 249, 249, 2); 
+    position: absolute;
+    right: 50%;
+    bottom: 50%;
+    transform: translateX(50%) translateY(50%);
+    border-radius: 9px;
 }
 
 #message-input {
-    margin-top: 2%;
-    margin-left: 40%;
-    width: 200px;
+    width: 600px;
     padding: 5px;
-    margin-right: 5px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: rgb(65, 67, 64);
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 2px solid rgb(132, 130, 130);
+    user-select: none;
+    outline: none;
+    color: white;
 }
 
-#send-button {
-    padding: 5px 10px;
+
+.SendPos {
+    position: absolute;
+    right: 50%;
+    bottom: 2%;
+    transform: translateX(50%) ;
 }
