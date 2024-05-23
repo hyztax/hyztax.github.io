@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const chatBox = document.getElementById('chat-box');
+    const chatBox = document.getElementById('messages');
     const messageInput = document.getElementById('message-input');
-    const sendButton = document.getElementById('send-button');
 
     function addMessage(message) {
         const messageElement = document.createElement('div');
@@ -11,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         messageElement.style.margin = '10px'; // Add some margin between messages
         messageElement.style.position = 'relative'; // To position the delete button correctly
         messageElement.style.maxWidth = '700px';
-        messageElement.style.borderRadius = "12px" // Set a maximum width
+        messageElement.style.borderRadius = "12px"; // Set a maximum width
 
         const messageText = document.createElement('span');
         messageText.className = 'message-text';
@@ -36,11 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
             removeMessage(messageElement, message);
         });
 
-
         messageElement.appendChild(messageText);
         messageElement.appendChild(deleteButton);
 
         chatBox.appendChild(messageElement);
+
+        // Scroll to the bottom of the chat box
+        chatBox.scrollTop = chatBox.scrollHeight;
     }
 
     function removeMessage(messageElement, message) {
@@ -64,8 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
         messages.forEach(message => addMessage(message));
     }
 
-
-
     messageInput.addEventListener('keypress', function (event) {
         if (event.key === 'Enter') {
             const message = messageInput.value.trim();
@@ -76,7 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
-
 
     loadMessages();
 });

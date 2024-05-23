@@ -17,27 +17,37 @@ body {
     bottom: 50%;
     transform: translateX(50%) translateY(50%);
     border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 #message-input {
-    width: 600px;
-    padding: 5px;
-    height: 20px;
+    width: 100%;
+    padding: 10px;
+    height: 40px;
     border-radius: 5px;
-    background-color: rgb(65, 67, 64);
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    border-bottom: 2px solid rgb(132, 130, 130);
-    user-select: none;
+    background-color: rgb(75, 77, 75);
+    border: none;
     outline: none;
-    color: white;
+    color: rgb(189, 185, 185);
+    box-sizing: border-box;
 }
+
 
 
 .SendPos {
-    position: absolute;
-    right: 50%;
-    bottom: 2%;
-    transform: translateX(50%) ;
+    width: 100%;
+    box-sizing: border-box;
 }
+
+

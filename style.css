@@ -1,8 +1,9 @@
 * {
   -webkit-user-select: none;
   -ms-user-select: none;
-  user-select: none; 
+  user-select: none;
 }
+
 body {
   background-color: black;
   height: 100%;
@@ -18,15 +19,123 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-  body{
+  body {
     overflow-x: hidden;
     overflow-y: visible;
     background-image: url('bilder/grey.jpg');
   }
 }
 
+.CloseLogin {
+  transition: all 0.3s ease;
+  position: absolute;
+  right: 0;
+  border: none;
+  background-color: red;
+  border-top: none;
+  border-right: none;
+  margin-right: -6.5px;
+  margin-top: -6.5px;
+  border: 2px solid black;
+  padding: 1px 5px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
 
+.LoginBtn {
+  transition: all 0.3s ease;
+  background-color: rgb(6, 224, 93);
+  border: 3px solid black;
+  border-radius: 8px;
+  padding: 5px 10px;
+}
+
+.LoginBtn2 {
+  transition: all 0.3s ease;
+  background-color: rgb(128, 128, 128);
+  border: 3px solid black;
+  border-radius: 8px;
+  padding: 5px 10px;
+}
+
+.LoginBtn:hover,
+.LoginBtn2:hover,
+.CloseLogin:hover {
+  transform: scale(1.06);
+}
+
+.LoginBtn:active,
+.LoginBtn2:active,
+.CloseLogin:active {
+  transform: scale(0.94);
+}
+.UsernameInput {
+  width: 200px;
+  height: 25px;
+  border-radius: 6px;
+  border: none;
+}
+.PasswordInput {
+  width: 170px;
+  height: 25px;
+  border-radius: 6px;
+  border: none;
+}
+.ErrorNotif1 {
+  position: absolute;
+  right: 50%;
+  top: 320px;
+  transform: translateX(50%);
+  opacity: 0%;
+  width: max-content;
+}
+.ErrorNotif2 {
+  position: absolute;
+  right: 50%;
+  top: 390px;
+  transform: translateX(50%);
+  opacity: 0%;
+  width: max-content;
+}
+
+.TogglePass {
+  background-image: url('bilder/HidePass.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  transform: translateY(5px);
+  border: none;
+  background-color: transparent;
+}
+
+.LoginDis {
+  border-radius: 8px;
+  width: max-content;
+  padding: 40px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 5px 30px 2px black;
+  background: #202020ef;
+
+}
+
+
+
+
+.MainLoginBdy {
+  display: none;
+  position: absolute;
+  bottom: calc(50% - 250px);
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
   
+}
+
 .site_name {
   margin-top: 30px;
   font-size: xxx-large;
@@ -34,7 +143,7 @@ body {
   font-family: Lucida Sans;
   color: rgb(255, 255, 255);
   text-shadow: 0 2px 3px rgb(1, 1, 1);
-  font-family:verdana;
+  font-family: verdana;
 }
 
 
@@ -48,14 +157,14 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-  .Versions{
-    position:absolute;
+  .Versions {
+    position: absolute;
     bottom: 15px;
     left: 94%;
     transform: translateX(-50%);
     font-size: 12px;
     color: #fff;
-   }
+  }
 }
 
 .undertext {
@@ -66,11 +175,14 @@ body {
   font-size: 17px;
   color: rgb(255, 255, 255);
   text-shadow: 0 2px 3px rgb(0, 0, 0);
-  font-family:verdana;
+  font-family: verdana;
 }
+
 .Button_Style {
-  display: flex; /* 'absolute' is not a valid value for display, assuming flex is intended */
-  flex-direction: column; /* added 'solid' to outline */
+  display: flex;
+  /* 'absolute' is not a valid value for display, assuming flex is intended */
+  flex-direction: column;
+  /* added 'solid' to outline */
   align-items: center;
   justify-content: center;
   width: 25%;
@@ -78,20 +190,18 @@ body {
   padding: 10px;
   left: 50%;
   transform: translateX(-50%);
-  background-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.8),
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.4),
-    rgba(43, 172, 97, 0) 90%
-  );
+  background-image: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.4),
+      rgba(43, 172, 97, 0) 90%);
   transition: all 0.5s ease;
   text-align: center;
   border-radius: 20px;
   position: relative;
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.253);
   color: rgb(179, 185, 183);
-  text-shadow: 0 0px 5px rgb(0, 0, 0);
+  text-shadow: 0 0 5px rgb(0, 0, 0);
   font-family: verdana;
   margin: 50px 0;
 }
@@ -101,11 +211,12 @@ body {
 }
 
 .Button_Style:hover {
-  transform: scale(1.04) translateY(-2px) translateX(calc(-50% + 7px) );
+  transform: scale(1.04) translateY(-2px) translateX(calc(-50% + 7px));
   box-shadow: 0 0 20px 2px rgba(173, 171, 171, 0.507);
 }
+
 .Button_Style:active {
-  transform: scale(0.96)  translateX(calc(-50% - 7px) );
+  transform: scale(0.96) translateX(calc(-50% - 7px));
   box-shadow: 0 0 20px 2px rgba(173, 171, 171, 0.507);
 }
 
@@ -151,17 +262,18 @@ body {
 }
 
 @media (max-width: 768px) {
-  .Button_Style{
+  .Button_Style {
     font-size: 12px;
     width: 60%;
-  }    
+  }
+
   .LogoBtn {
     transform: scale(1.2);
   }
 }
 
 @media (max-width: 480px) {
-  .Button_Style{
+  .Button_Style {
     font-size: 10px;
   }
 }
@@ -186,7 +298,7 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-  .Flex-For-Btns  {
+  .Flex-For-Btns {
     display: none;
   }
 }
@@ -212,10 +324,11 @@ body {
 
 @media (max-width: 960px) {
 
-  
+
   .FlexForModal {
     flex-direction: column;
   }
+
   .modal-content {
     width: 45%;
   }
@@ -259,7 +372,11 @@ body {
   }
 }
 
-body, h1, h2, p, img {
+body,
+h1,
+h2,
+p,
+img {
   margin: 0;
   padding: 0;
 }
@@ -267,6 +384,7 @@ body, h1, h2, p, img {
 .modal-content h2 {
   color: white;
 }
+
 #SnapChat-btn {
   transition: all 0.4s ease;
 }
@@ -313,15 +431,16 @@ body {
   background-attachment: fixed;
 }
 
-.tt_embed{
+.tt_embed {
   display: none;
 }
+
 .Flex-For-Btns {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-left: -195%;
-  
+
 }
 
 
@@ -341,7 +460,8 @@ body {
 }
 
 
-.länk a, .länk a:visited {
+.länk a,
+.länk a:visited {
   margin: 10px 80px;
   color: white !important;
 }
@@ -349,19 +469,23 @@ body {
 .länk a {
   text-decoration: none;
 }
+
 .länk:hover a {
   text-decoration: underline;
 }
+
 .Position-For-Btns {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   right: -4px;
 }
+
 .LogoBtnPressed {
   transform: rotate(180deg);
   margin-right: 170px;
 }
+
 @media only screen and (max-width: 600px) {
   .LogoBtnPressed {
     display: none;
@@ -399,13 +523,13 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-  .Position-For-Btns  {
+  .Position-For-Btns {
     display: none;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .ShowOnHover{
+  .ShowOnHover {
     display: none;
   }
 }
@@ -430,6 +554,7 @@ body {
 .länk a:visited {
   color: white;
 }
+
 .ScrollAble {
   position: absolute;
   top: 60%;
@@ -437,14 +562,14 @@ body {
   transform: translate(-50%, -50%);
   max-height: calc(100% - 190px);
   width: 50%;
-  height:60%;
+  height: 60%;
   color: rgb(176, 181, 179);
-  text-shadow: 0 0px 5px rgb(107, 111, 110);
+  text-shadow: 0 0 5px rgb(107, 111, 110);
   font-family: verdana;
   overflow-y: auto;
   overflow-x: hidden;
   background-color: rgba(24, 23, 23, 0.8);
-  border: 0px solid rgb(35, 36, 36);
+  border: 0 solid rgb(35, 36, 36);
   box-shadow: 0 0 10px 5px rgba(167, 167, 167, 0.37);
   border-radius: 15px;
 }
@@ -458,12 +583,12 @@ body {
     max-height: 80%;
     width: 90%;
     color: rgb(176, 181, 179);
-    text-shadow: 0 0px 5px rgb(107, 111, 110);
+    text-shadow: 0 0 5px rgb(107, 111, 110);
     font-family: verdana;
     overflow-y: auto;
     overflow-x: hidden;
     background-color: rgba(24, 23, 23, 0.8);
-    border: 0px solid rgb(35, 36, 36);
+    border: 0 solid rgb(35, 36, 36);
     box-shadow: 0 0 10px 5px rgba(167, 167, 167, 0.37);
     border-radius: 15px;
   }
@@ -481,12 +606,14 @@ body {
 .ScrollAble::-webkit-scrollbar {
   background-color: rgb(71, 70, 70);
   border-radius: 8px;
- 
+
 }
+
 .ScrollAble::-webkit-scrollbar-thumb {
-  background-color:rgb(36, 34, 34);
+  background-color: rgb(36, 34, 34);
   border-radius: 8px;
 }
+
 .ScrollAble::-webkit-scrollbar-thumb:hover {
   background-color: rgb(58, 55, 55);
 }
@@ -503,7 +630,7 @@ body {
   background-color: rgba(58, 55, 55, 0.397);
   border-radius: 10px;
   font-weight: 400;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .tillbaks {
@@ -514,8 +641,9 @@ body {
   background-color: rgba(39, 37, 37, 0.397);
   border-radius: 12px;
 }
+
 .tillbaks a {
-  
+
   color: white !important;
 }
 
@@ -527,7 +655,7 @@ body {
     padding: 10px;
     background-color: rgba(39, 37, 37, 0.397);
     border-radius: 12px;
-    width:auto;
+    width: auto;
   }
 }
 
@@ -537,6 +665,7 @@ body {
     color: white;
   }
 }
+
 .spotifyContainer {
   display: none;
 }
@@ -555,4 +684,116 @@ body {
 .SPCbtn {
   background-color: transparent;
   border: none;
+}
+
+.Flex-Row {
+  display: flex;
+  flex-direction: row;
+}
+
+.SettingsToggleBtn {
+  transition: all 0.3s ease;
+  background-image: url('bilder/SettingsImg.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.SettingsToggleBtn:hover {
+  transform: rotate(180deg);
+}
+
+.AccountContent {
+  padding: 10px 0;
+  border: 3px solid black;
+  background-color: rgb(22, 35, 41);
+  text-align: left;
+  max-width: 100%;
+  width: 100%;
+  height: max-content;
+}
+
+.DelAccount {
+  cursor: pointer;
+  background-color: red;
+  border: 3px solid black;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.AccountInfo {
+  text-align: center;
+  word-wrap: break-word;
+  white-space: normal;
+  text-overflow: ellipsis;
+}
+
+.CloseSettings {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 0 8px;
+  background-color: red;
+  border: 3px solid black;
+  font-size: 25px;
+  border-radius: 8px;
+}
+
+.Settings {
+  transition: all 0.3s ease;
+  display: none;
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 250px;
+  height: calc(100% - 6px);
+  background-color: rgb(8, 44, 62);
+  z-index: 999;
+  color: white;
+  border: 3px solid black;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  border-radius: 0 12px 12px 0;
+  animation: slideInToView 0.5s cubic-bezier(0.175, 0.885, 0.32, 1);
+}
+
+@keyframes slideInToView {
+  from {
+    left: -250px;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+.Settings h2 {
+  text-align: left;
+}
+
+.PasswordShow {
+  -webkit-text-security: disc;
+}
+
+.SettingsBottomLine {
+  border-top: 3px solid black;
+}
+
+.SettingsContent {
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: transparent;
+  height: 75%;
+  max-height: 75%;
 }

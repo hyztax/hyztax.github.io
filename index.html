@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html>
 <html lang="en">
 
 <head>
@@ -17,8 +16,49 @@
 
 </head>
 
-<body onclick="toggleColumnVisibility('Close')">
+<body>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+  <div class="Settings" id="Settings">
+    <button class="CloseSettings" onclick="ShowSettings()">x</button>
+    <div class="SettingsContent">
+      <div>
+        <div class="SettingParts">
+          <div id="OnlyLoggedIn">
+            <h2>Konto</h2>
+            <br>
+            <div class="AccountContent">
+              <div class="Flex-Row">
+                <p>Namn:</p>
+                <p class="AccountInfo" id="UsernameDis"></p>
+              </div>
+            </div>
+            <div class="AccountContent">
+              <div class="Flex-Row">
+                <p>Skapat:</p>
+                <p class="AccountInfo" id="KontoTimeDis"></p>
+              </div>
+            </div>
+            <br><br><br>
+            <button class="DelAccount" onclick="CreateAccount('Delete')">Radera Konto</button>
+          </div>
+        </div>
+
+        <div class="SettingParts">
+          <div id="OnlyLoggedOut">
+            <h2>Inget Konto</h2>
+            <br>
+            <div class="AccountContent">
+              <p>Det verkar som om att du inte är inloggad i ett konto. Logga in eller skapa ett konto!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
   <h1 class="site_name">TAX HOOD </h1>
 
@@ -36,6 +76,9 @@
     <script async src="https://www.tiktok.com/embed.js"></script>
   </div>
 
+  <button class="SettingsToggleBtn" onclick="ShowSettings()"></button>
+
+
 
   <div class="Center-Anchors">
     <div class="länk">
@@ -50,23 +93,21 @@
     <div class="Position-For-Btns">
       <div class="Flex-For-Btns">
         <a href="https://discord.gg/TaxHood">
-          <img
-            src="bilder/discord.png"
-            alt="Discord" id="Discord-btn" class="LogoBtn" style="width: 45px; height: 45px; margin-bottom: -7px;"
-            onclick="ShowBtn(1)">
+          <img src="bilder/discord.png" alt="Discord" id="Discord-btn" class="LogoBtn"
+            style="width: 45px; height: 45px; margin-bottom: -7px;" onclick="ShowBtn(1)">
         </a>
 
         <a href="https://www.youtube.com/@Hyztax">
-          <img src="bilder/youtube.png"
-            id="Youtube-btn" alt="Youtube" class="LogoBtn" style="width: 45px; height: 45px; margin-top: 10px;" onclick="ShowBtn(2)">
+          <img src="bilder/youtube.png" id="Youtube-btn" alt="Youtube" class="LogoBtn"
+            style="width: 45px; height: 45px; margin-top: 10px;" onclick="ShowBtn(2)">
         </a>
-        <button  class="SPCbtn" onclick="ShowSpotifyCont(this)" id="toggleButton">
-        <img src="bilder/spotify.png" alt="spotify"  class="LogoBtn" style="width: 50px; height: 50px; margin-top: 10px;" id="Spotify-btn">
+        <button class="SPCbtn" onclick="ShowSpotifyCont(this)" id="toggleButton">
+          <img src="bilder/spotify.png" alt="spotify" class="LogoBtn"
+            style="width: 50px; height: 50px; margin-top: 10px;" id="Spotify-btn">
         </button>
         <a>
-          <img src="bilder/tiktok.png"
-            alt="Tiktok" onclick="close1 = !close1; ShowBtn(3)" id="Tiktok-btn" class="LogoBtn"
-            style="width: 45px; height: 45px; margin-top: 5px;">
+          <img src="bilder/tiktok.png" alt="Tiktok" onclick="close1 = !close1; ShowBtn(3)" id="Tiktok-btn"
+            class="LogoBtn" style="width: 45px; height: 45px; margin-top: 5px;">
         </a>
 
         <a href="https://snapchat.com/t/74agz9w5">
@@ -119,16 +160,64 @@
   </div>
 
 
-  <div class="Button_Style" onmouseleave="toggleColumnVisibility('Wait')" onclick="toggleColumnVisibility('')">
+  <div class="Button_Style" onclick="ShowLogin()">
     <h2>Chatt</h2>
+  </div>
 
+  <div class="MainLoginBdy" id="MainLoginBdy">
+    <button class="CloseLogin" onclick="ShowLogin('')">X</button>
+    <div class="LoginDis">
+      <h1>Logga In</h1>
+      <br><br>
+      <h3>Användarnamn</h3>
+      <input class="UsernameInput" id="UsernameLogin" placeholder="Användarnamn" type="text">
+      <br><br>
+      <h3>Lösenord</h3>
+      <div class="Flex-Col"><input class="PasswordInput" id="LoginPassword" placeholder="Lösenord" type="password">
+        <button class="TogglePass" onclick="ShowPasword(this,'1')"></button></div>
+      <br><br>
+      <p class="ErrorNotif1" id="ErrorNotif1"></p>
+      <br>
+      <button class="LoginBtn" onclick="CreateAccount('Work')">Logga in</button>
+      <br><br>
+      <p>Har du inget konto?</p>
+      <br>
+      <button class="LoginBtn2" onclick="ShowLogin('CreateNew')">Skapa ett!</button>
+    </div>
+  </div>
+
+
+  <div class="MainLoginBdy" id="MainLoginBdy2">
+    <button class="CloseLogin" onclick="ShowLogin('CloseNew')">X</button>
+    <div class="LoginDis">
+      <h1>Skapa Konto</h1>
+      <br><br>
+      <h3>Användarnamn</h3>
+      <input class="UsernameInput" id="Usrn" type="text" placeholder="Användarnamn">
+      <div style="margin: 5px;"></div>
+      <p style="color: rgb(224, 208, 63);">(Minst 5 tecken)</p>
+      <br><br>
+      <h3>Lösenord</h3>
+      <div class="Flex-Col"><input class="PasswordInput" id="LoginPassword2" type="password" placeholder="Lösenord">
+        <button class="TogglePass" onclick="ShowPasword(this,'2')"></button></div>
+        <div style="margin: 5px;"></div>
+        <p style="color: rgb(224, 208, 63);">(Minst 8 tecken)</p>
+
+      <br><br>
+      <p class="ErrorNotif2" id="ErrorNotif2"></p>
+      <br>
+      <button class="LoginBtn" onclick="CreateAccount('')">Skapa</button>
+    </div>
   </div>
 
   <div class="Versions">V.5.4</div>
 
 
   <div id="spotifyContainer" class="spotifyContainer">
-      <iframe class="spotify-embed" src="https://open.spotify.com/embed/playlist/7p9ALjNzssa5ePbcIaWGH2?utm_source=generator" width="302" height="302" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe class="spotify-embed"
+      src="https://open.spotify.com/embed/playlist/7p9ALjNzssa5ePbcIaWGH2?utm_source=generator" width="302" height="302"
+      frameborder="0" allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </div>
 
 </body>
