@@ -166,6 +166,10 @@ body {
   }
 }
 
+.FlexForModal {
+  display: flex;
+  flex-direction: row;
+}
 
 .modal {
   display: none;
@@ -206,9 +210,15 @@ body {
 }
 
 
-.FlexForModal {
-  display: flex;
-  flex-direction: row;
+@media (max-width: 960px) {
+
+  
+  .FlexForModal {
+    flex-direction: column;
+  }
+  .modal-content {
+    width: 45%;
+  }
 }
 
 
