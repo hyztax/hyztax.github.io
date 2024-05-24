@@ -133,14 +133,36 @@ body {
 
 .profile_pic {
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgb(92, 90, 90);
+    background: url('your_default_image_url') center center/cover, rgb(92, 90, 90); 
     border: 1px solid #08080800;
-    padding: 0.1px; /* Increase padding to make the dot bigger */
-    border-radius: 50%; /* Use border-radius to make the shape a circle */
-    width: 50px; /* Adjust width to make the dot bigger */
-    height: 50px; /* Adjust height to make the dot bigger */
+    padding: 0.1px; 
+    border-radius: 50%; 
+    width: 50px; 
+    height: 50px; 
     z-index: 1000;
+    cursor: pointer; /* Add cursor pointer to indicate clickability */
+}
+
+.arrow_out {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-top: 30% solid transparent;
+    margin-top: 9px;
+    margin-left: 20px;
+    color: rgb(26, 127, 223);
+    z-index: 2;
+    
+}
+
+.user_name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    font-size: 12px;
+    cursor: pointer;
 }

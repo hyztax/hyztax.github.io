@@ -188,3 +188,130 @@ document.addEventListener("DOMContentLoaded", function () {
     loadMessages();
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    var profilePic = document.getElementById("profilePic");
+    var storedPic = localStorage.getItem("profilePicData");
+
+    // Set the background image from local storage if available
+    if (storedPic) {
+        profilePic.style.backgroundImage = "url('" + storedPic + "')";
+    }
+
+    // Function to handle click event on the profile picture
+    profilePic.addEventListener("contextmenu", function(event) {
+        event.preventDefault(); // Prevent default context menu
+        var contextMenu = document.createElement('div');
+        contextMenu.className = 'context-menu';
+        contextMenu.innerHTML = `
+            <div class="alternative" data-action="remove">Remove Image</div>
+            <div class="alternative" data-action="change">Change Image</div>
+        `;
+        contextMenu.style.position = 'fixed';
+        contextMenu.style.left = `${event.clientX}px`;
+        contextMenu.style.top = `${event.clientY}px`;
+
+        // Add event listeners to context menu options
+        contextMenu.querySelectorAll('.alternative').forEach(option => {
+            option.addEventListener('click', function () {
+                const action = option.getAttribute('data-action');
+                if (action === 'remove') {
+                    removeImage();
+                } else if (action === 'change') {
+                    changeImage();
+                }
+                contextMenu.remove();
+            });
+        });
+
+        // Close the menu when clicking outside of it
+        document.addEventListener('click', closeMenuListener);
+
+        // Append the context menu to the document body
+        document.body.appendChild(contextMenu);
+    });
+
+    // Function to remove the profile picture
+    function removeImage() {
+        profilePic.style.backgroundImage = "";
+        localStorage.removeItem("profilePicData");
+    }
+
+    // Function to handle changing the profile picture
+    function changeImage() {
+        var fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.accept = 'image/*'; // Accept only image files
+        fileInput.style.display = 'none';
+
+        // Append the file input to the document body
+        document.body.appendChild(fileInput);
+
+        // Trigger click event on the file input
+        fileInput.click();
+
+        // Listen for changes in the file input
+        fileInput.addEventListener('change', function() {
+            var file = fileInput.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    // Set the background of the profile picture div to the uploaded image
+                    profilePic.style.backgroundImage = "url('" + e.target.result + "')";
+                    // Store the picture data in local storage
+                    localStorage.setItem("profilePicData", e.target.result);
+                }
+                reader.readAsDataURL(file);
+            }
+            // Remove the file input from the document body
+            document.body.removeChild(fileInput);
+        });
+    }
+
+    // Close the context menu when clicking outside of it
+    function closeMenuListener(event) {
+        if (!contextMenu.contains(event.target)) {
+            contextMenu.remove();
+            document.removeEventListener('click', closeMenuListener);
+        }
+    }
+});
+
+
+
+// Function to change the user's name
+function changeName() {
+    var newName = prompt("Enter your new name:");
+    if (newName !== null && newName !== "") {
+        localStorage.setItem("userName", newName);
+        document.querySelector(".user_name").textContent = newName;
+    }
+}
+
+// Check if the user's name is stored in local storage and update the content
+document.addEventListener("DOMContentLoaded", function() {
+    var storedName = localStorage.getItem("userName");
+    if (storedName) {
+        document.querySelector(".user_name").textContent = storedName;
+    }
+});
+
+// Function to change the user's name
+function changeName() {
+    var newName = prompt("Enter your new name (up to 10 characters):");
+    if (newName !== null && newName !== "") {
+        if (newName.length > 10) {
+            alert("Name must be 10 characters or less.");
+            return;
+        }
+        localStorage.setItem("userName", newName);
+        document.querySelector(".user_name").textContent = newName;
+    }
+}
+
+// Check if the user's name is stored in local storage and update the content
+document.addEventListener("DOMContentLoaded", function() {
+    var storedName = localStorage.getItem("userName");
+    if (storedName) {
+        document.querySelector(".user_name").textContent = storedName;
+    }
+});

@@ -18,9 +18,10 @@
 
 <div id="chat-box">
     <div class="topnav">
-    <div class="profile_pic"></div>
+        <div class="profile_pic" id="profilePic"></div>
+        <div class="user_name" style="font-size: 12px; cursor: pointer;" onclick="changeName()">ditt namn</div>
     </div>
-
+<div class="arrow_out" style="font-size: 24px;">&lt;</div>
 
     <div id="messages"></div>
     <div class="SendPos">
@@ -28,7 +29,7 @@
     </div>
 </div>
 
-<div class="alternative" onclick="removeMessage(this.parentElement.parentElement.parentElement, '${message}')">Radera</div>
+
 
 
 
