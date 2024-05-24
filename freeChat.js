@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function() {
         profilePic.style.backgroundImage = "url('" + storedPic + "')";
     }
 
-    // Function to handle click event on the profile picture
+    // Function to handle right-click event on the profile picture
     profilePic.addEventListener("contextmenu", function(event) {
         event.preventDefault(); // Prevent default context menu
         var contextMenu = document.createElement('div');
@@ -228,6 +228,33 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Append the context menu to the document body
         document.body.appendChild(contextMenu);
+    });
+
+    // Function to handle left-click event for inserting photo
+    profilePic.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent default behavior
+        var fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.accept = 'image/*'; // Accept only image files
+        fileInput.style.display = 'none';
+
+        // Listen for changes in the file input
+        fileInput.addEventListener('change', function() {
+            var file = fileInput.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    // Set the background of the profile picture div to the uploaded image
+                    profilePic.style.backgroundImage = "url('" + e.target.result + "')";
+                    // Store the picture data in local storage
+                    localStorage.setItem("profilePicData", e.target.result);
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Trigger click event on the file input
+        fileInput.click();
     });
 
     // Function to remove the profile picture
