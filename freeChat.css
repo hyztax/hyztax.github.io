@@ -166,3 +166,7 @@ body {
     font-size: 12px;
     cursor: pointer;
 }
+
+.info_text{
+    margin-top: 70px;
+}
