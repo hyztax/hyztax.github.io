@@ -17,11 +17,19 @@
 
 
 <div id="chat-box">
+    <div class="topnav">
+    <div class="profile_pic"></div>
+    </div>
+
+
     <div id="messages"></div>
     <div class="SendPos">
         <input type="text" id="message-input" placeholder="Skriv här...">
     </div>
 </div>
+
+<div class="alternative" onclick="removeMessage(this.parentElement.parentElement.parentElement, '${message}')">Radera</div>
+
 
 
 
