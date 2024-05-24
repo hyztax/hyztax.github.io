@@ -315,3 +315,12 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector(".user_name").textContent = storedName;
     }
 });
+
+
+function showMainMenu() {
+    var mainMenu = document.querySelector('.main_menu');
+    var arrowIcon = document.querySelector('.arrow_out');
+    mainMenu.style.display = 'block'; // Show main menu
+    arrowIcon.style.display = 'none'; // Hide arrow icon
+}
+
