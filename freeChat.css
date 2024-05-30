@@ -56,7 +56,6 @@ body {
 .SendPos {
     width: 100%;
     box-sizing: border-box;
-    overflow-y: hidden;
 }
 
 

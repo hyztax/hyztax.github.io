@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         messageContainer.style.justifyContent = 'flex-end';
         messageContainer.style.margin = '10px'; // Add some margin between messages
         messageContainer.style.marginRight = '-10px';
+        messageContainer.style.overflowY = 'hidden';
 
         const messageElement = document.createElement('div');
         messageElement.className = 'message';
