@@ -476,20 +476,18 @@ window.onload = initializeMenuState;
 
 
 //new code below here 
-
 function updateCounter() {
     var now = new Date();
-    var seconds = now.getSeconds() + 1; // Adding 1 to start from 1 second
-    var minutes = now.getMinutes();
-    var hours = now.getHours();
+    var seconds = now.getSeconds(); // Seconds from 0 to 59
+    var minutes = now.getMinutes(); // Minutes from 0 to 59
+    var hours = now.getHours();     // Hours from 0 to 23
+    var totalTimeInMinutes = minutes + hours * 60; // Total minutes elapsed today
     var timeString;
 
-    if (seconds < 60) {
-        timeString = seconds + ' sec';
-    } else if (minutes < 60) {
-        timeString = Math.floor(seconds / 60) + ' min';
+    if (totalTimeInMinutes < 60) {
+        timeString = totalTimeInMinutes + ' min';
     } else {
-        timeString = Math.floor(hours) + ' h';
+        timeString = Math.floor(totalTimeInMinutes / 60) + ' h';
     }
     
     document.querySelector('.time').textContent = timeString;
