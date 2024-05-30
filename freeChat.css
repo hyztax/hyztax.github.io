@@ -167,6 +167,7 @@ body {
     color: rgb(222, 224, 226);
     cursor: pointer;
     font-size: 20px;
+    overflow-y: hidden;
 }
 
 .user_name {
