@@ -34,6 +34,7 @@ body {
     overflow-y: auto;
     padding: 10px;
     box-sizing: border-box;
+    
 }
 
 #message-input {
@@ -66,7 +67,7 @@ body {
     border: 1px solid #828181;
     margin-bottom: 250px;
     background: rgb(39, 39, 39);
-    position:fixed;
+    position:absolute;
     right: 50%;
     bottom: 50%;
     transform: translateX(50%) translateY(50%);
@@ -124,7 +125,8 @@ body {
 }
 
 #messages {
-    min-height: 100px; /* Set a minimum height for the chat box */
+    min-height: 100px; 
+    /* Set a minimum height for the chat box */
 }
 
 .report-popup {
@@ -310,6 +312,7 @@ body {
 }
 .chat-item .message {
     flex: 1;
+    overflow: hidden;
 }
 .chat-item .time {
     color: rgb(123, 119, 119);
