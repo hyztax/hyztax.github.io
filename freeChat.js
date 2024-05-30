@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         messageContainer.style.justifyContent = 'flex-end';
         messageContainer.style.margin = '10px'; // Add some margin between messages
         messageContainer.style.marginRight = '-10px';
-        messageContainer.style.overflowY = 'hidden';
+      
 
         const messageElement = document.createElement('div');
         messageElement.className = 'message';
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         chatBox.style.height = `${chatBox.offsetHeight + messageContainerHeight}px`;
 
         // Scroll to the bottom of the chat box
-        chatBox.scrollTop = chatBox.scrollHeight;
+       
 
         // Add event listener for right-click context menu to each message
         messageElement.addEventListener('contextmenu', function (event) {
