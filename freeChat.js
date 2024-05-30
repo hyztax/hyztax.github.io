@@ -33,8 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         chatBox.appendChild(messageContainer);
 
-        // Add padding top to chatBox
-     
+       
 
         // Calculate and set height
         const messageContainerHeight = messageContainer.offsetHeight;
@@ -51,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+        
 
     function createContextMenu(message, messageContainer, x, y) {
         const menu = document.createElement('div');
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="alternative" data-action="copy">Kopiera</div>
             <div class="alternative" data-action="report">Rapportera</div>
         `;
-        menu.style.position = 'fixed';
+        menu.style.position = 'absolute';
         menu.style.left = `${x}px`;
         menu.style.top = `${y}px`;
 
