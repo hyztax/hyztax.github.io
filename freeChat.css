@@ -154,6 +154,7 @@ body {
     height: 50px; 
     z-index: 1000;
     cursor: pointer; /* Add cursor pointer to indicate clickability */
+    overflow-y: hidden;
 }
 
 .arrow {
