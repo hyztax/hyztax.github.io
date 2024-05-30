@@ -400,6 +400,80 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-//new code below here 
+function bringChatBoxToFront() {
+    const chatBox = document.getElementById('chat-box');
+    chatBox.style.zIndex = '0';
+}
 
+function bringChatBoxToFront() {
+    const chatBox = document.getElementById('chat-box');
+    const mainMenu = document.querySelector('.main_menu');
+    const arrowButton = document.querySelector('.arrow');
+    
+   
+    chatBox.style.zIndex = '-2';
+    
+    mainMenu.style.display = 'none';
+    
+   
+    arrowButton.style.zIndex = '10000';
+}
+
+function showMainMenu() {
+    const mainMenu = document.querySelector('.main_menu');
+    const arrowButton = document.querySelector('.arrow');
+    
+  
+    mainMenu.style.display = 'block';
+    
+   
+    arrowButton.style.zIndex = '1';
+}
+
+  // Function to show the main menu
+  function showMainMenu() {
+    const mainMenu = document.querySelector('.main_menu');
+    const arrowButton = document.querySelector('.arrow');
+    
+    // Show the main menu
+    mainMenu.style.display = 'block';
+    
+    // Set a lower z-index for the arrow button
+    arrowButton.style.zIndex = '1';
+    
+    // Store the menu state in local storage
+    localStorage.setItem('menuState', 'open');
+}
+
+// Function to hide the main menu
+function hideMainMenu() {
+    const mainMenu = document.querySelector('.main_menu');
+    const arrowButton = document.querySelector('.arrow');
+    
+    // Hide the main menu
+    mainMenu.style.display = 'none';
+    
+    // Set a higher z-index for the arrow button
+    arrowButton.style.zIndex = '10000';
+    
+    // Store the menu state in local storage
+    localStorage.setItem('menuState', 'closed');
+}
+
+// Function to initialize the menu state based on local storage
+function initializeMenuState() {
+    const menuState = localStorage.getItem('menuState');
+    if (menuState === 'open') {
+        showMainMenu();
+    } else {
+        hideMainMenu();
+    }
+}
+
+// Call the initializeMenuState function when the page is loaded
+window.onload = initializeMenuState;
+
+
+
+//new code below here 
 

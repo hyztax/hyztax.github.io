@@ -160,7 +160,6 @@ body {
     margin-top: 9px;
     margin-left: 20px;
     color: rgb(222, 224, 226);
-    z-index: 2;
     cursor: pointer;
     font-size: 20px;
 }
@@ -212,6 +211,7 @@ body {
     box-sizing: border-box;
     display: none;
     transition: left 0.5s ease; 
+   
 }
 
 .header {
@@ -370,4 +370,30 @@ z-index: 3;
     position: absolute;
     left: 220px;
     bottom: 25px;
+    cursor: pointer;
+}
+
+
+.profile {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 10px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.profile .name {
+    font-size: 14px;
+    font-weight: bold;
 }
