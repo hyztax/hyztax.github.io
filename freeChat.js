@@ -499,3 +499,5 @@ setInterval(updateCounter, 1000);
 
 // Initial update
 updateCounter();
+
+//göra en knapp i menyn som visar en pop up med bug fixes!
