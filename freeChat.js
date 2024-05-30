@@ -477,3 +477,26 @@ window.onload = initializeMenuState;
 
 //new code below here 
 
+function updateCounter() {
+    var now = new Date();
+    var seconds = now.getSeconds() + 1; // Adding 1 to start from 1 second
+    var minutes = now.getMinutes();
+    var hours = now.getHours();
+    var timeString;
+
+    if (seconds < 60) {
+        timeString = seconds + ' sec';
+    } else if (minutes < 60) {
+        timeString = Math.floor(seconds / 60) + ' min';
+    } else {
+        timeString = Math.floor(hours) + ' h';
+    }
+    
+    document.querySelector('.time').textContent = timeString;
+}
+
+// Update counter every second
+setInterval(updateCounter, 1000);
+
+// Initial update
+updateCounter();
