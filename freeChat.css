@@ -81,6 +81,7 @@ body {
     border-bottom-left-radius: 0;
     border-bottom-right-radius:0 ;
     overflow: hidden;
+    overflow-y: hidden;
 
 }
 
