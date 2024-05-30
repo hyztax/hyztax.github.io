@@ -63,8 +63,6 @@ body {
 .topnav{
     width: 298px;
     height: 100px;
-    overflow-y: none;
-    overflow-x: none;
     border: 1px solid #828181;
     margin-bottom: 250px;
     background: rgb(39, 39, 39);
