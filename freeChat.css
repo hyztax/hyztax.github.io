@@ -1,6 +1,9 @@
 body {
     background-color: black;
     font-family: Arial, sans-serif;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
 }
 
 #chat-box {
@@ -188,6 +191,7 @@ body {
 
 
 .main_menu {
+
     width: 300px;
     height: 600px;
     overflow-y: auto;
@@ -210,12 +214,160 @@ body {
     transition: left 0.5s ease; 
 }
 
+.header {
+    width: 100%; /* Make the header take up the full width */
+    overflow-x: auto; /* Enable horizontal scrolling */
+}
 
-.snart_klart{
-color: white;
-position: absolute;
-bottom: 50%;
-left: 25%;
-width: auto;
-display: flex;
+/* WebKit browsers */
+.header::-webkit-scrollbar {
+    height: 1px;
+    margin-top: -10px; 
+}
+
+.header::-webkit-scrollbar-track {
+    background: #3f3d3d0f; 
+}
+
+.header::-webkit-scrollbar-thumb {
+    background: #88888827; 
+    border-radius: 5px; 
+}
+
+.header::-webkit-scrollbar-thumb:hover {
+    background: #55555500; 
+}
+
+/* Firefox */
+.scroll-container {
+    scrollbar-width: 1px;
+    scrollbar-color: #00000034 #72707014; /* Thumb and track colors */
+}
+
+/* General styling */
+.scroll-container {
+    display: flex; /* Arrange the circles in a row */
+    width: max-content; /* Adjust to fit all the circles */
+}
+
+.header .circle {
+    width: 50px;
+    height: 50px;
+    background-color: #222121;
+    border-radius: 50%;
+    margin: 6px; /* Add some space between the circles */
+}
+
+
+.search {
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #b4b4b4;
+    margin-left: 23%;
+}
+.search input {
+    width: 50%;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #11111100;
+    outline: none;
+    color: white;
+    text-align: center;
+    margin-bottom: -20px;
+}
+
+
+
+.chat-list {
+    padding: 10px;
+}
+.chat-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #272323;
+}
+.chat-item .avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #666;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.chat-item .message {
+    flex: 1;
+}
+.chat-item .time {
+    color: rgb(123, 119, 119);
+    font-size:smaller;
+}
+
+.space{
+margin-top: 15%;
+z-index: 3;
+}
+
+.name {
+    text-align: center;
+}
+
+.chat-list {
+    max-height: 360px; /* Adjust the height as needed */
+    overflow-y: auto;
+}
+
+/* Scrollbar styles */
+.chat-list::-webkit-scrollbar {
+    width: 0.1px;
+    border-radius: 10px;
+
+}
+
+.chat-list::-webkit-scrollbar-track {
+    background: #0f0808;
+    border-radius: 10px;
+}
+
+.chat-list::-webkit-scrollbar-thumb {
+    background: #050505;
+    border-radius: 10px;
+}
+
+.chat-list::-webkit-scrollbar-thumb:hover {
+    background: #00000000;
+   
+}
+
+/* Scrollbar for Firefox */
+.chat-list {
+    scrollbar-width: thin;
+    scrollbar-color: #3a383877 #f1f1f100;
+   
+}
+
+/* nytt inhåll här*/
+
+.bottomnav {
+    width: 100%;
+    background-color: #000000;
+    height: 90px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.min_profil {
+    background-image: url('bilder/minProfil.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 5;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    left: 220px;
+    bottom: 25px;
 }

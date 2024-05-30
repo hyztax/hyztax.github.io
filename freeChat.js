@@ -351,3 +351,55 @@ function showMainMenu() {
     arrowIcon.style.display = 'none'; // Hide arrow icon
 }
 
+//make a code that connects the "friends" div that
+// creates multiple profile for each person that creates an account
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    var searchInput = document.getElementById('search-input');
+
+    // Add event listener for input event on search input
+    searchInput.addEventListener('input', function () {
+        var filter = this.value.trim().toLowerCase(); // Get the trimmed and lowercased search query
+        var chatItems = document.querySelectorAll('.chat-list .chat-item'); // Select all chat items
+
+        chatItems.forEach(function (item) {
+            var name = item.querySelector('.message > div:first-child').textContent.trim().toLowerCase(); // Get the trimmed and lowercased name
+            var message = item.querySelector('.message > div:last-child').textContent.trim().toLowerCase(); // Get the trimmed and lowercased message
+
+            // Check if name or message contains the search query
+            if (name.includes(filter) || message.includes(filter)) {
+                item.style.display = ''; // Show the item
+            } else {
+                item.style.display = 'none'; // Hide the item
+            }
+        });
+    });
+
+    // Add click event listener to name elements to set search input value
+    var nameElements = document.querySelectorAll('.name');
+    nameElements.forEach(function (element) {
+        element.addEventListener('click', function () {
+            var name = element.textContent.trim(); // Get the trimmed name
+            searchInput.value = name; // Set the search input value
+            searchInput.dispatchEvent(new Event('input')); // Trigger input event to filter chat items
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    var arrowButton = document.querySelector('.arrow');
+    var mainMenu = document.querySelector('.main_menu');
+
+    // Add click event listener to arrow button
+    arrowButton.addEventListener('click', function () {
+        mainMenu.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Scroll the main menu into view
+    });
+});
+
+
+
+
+//new code below here 
+
+
