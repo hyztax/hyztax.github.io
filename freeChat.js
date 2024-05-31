@@ -501,3 +501,28 @@ setInterval(updateCounter, 1000);
 updateCounter();
 
 //göra en knapp i menyn som visar en pop up med bug fixes!
+
+function showPopup() {
+    document.getElementById('popup').style.display = 'block';
+    document.getElementById('popup-overlay').style.display = 'block';
+}
+
+function hidePopup() {
+    document.getElementById('popup').style.display = 'none';
+    document.getElementById('popup-overlay').style.display = 'none';
+}
+
+function refreshPage() {
+    location.reload();
+}
+
+function showLogsPopup() {
+    var logsPopup = document.getElementById('logsPopup');
+    logsPopup.style.display = 'block';
+  }
+  
+  function closeLogsPopup() {
+    var logsPopup = document.getElementById('logsPopup');
+    logsPopup.style.display = 'none';
+  }
+  

@@ -52,11 +52,23 @@
     </div>
 
 <div class="chat-list">
-    <div class="chat-item">
+    <div class="chat-item" onclick="showPopup()">
         <div class="avatar"></div>
         <div class="message">
             <div style="color: rgb(201, 203, 207);">Hyztax</div>
-            <div style="font-size: smaller;">• ‎ VÄLKOMMEN!</div>
+            <div style="font-size: smaller; cursor: pointer;">• ‎ Välkommen..</div>
+
+            <div id="popup-overlay" onclick="hidePopup()"></div>
+            <div id="popup">
+                <div class="topnav">
+                  
+                    <div style="margin-left: 40%;" class="avatar"></div>
+                    <div style="color: rgb(201, 203, 207); margin-left: 42%; font-size: small; margin-top: 8px;">Hyztax</div>
+                    
+                </div>
+                <div class="welcome_msg">Välkommen till tax chat!</div>
+            </div>
+            
         </div>
         <div class="time"></div>
    
@@ -68,14 +80,32 @@
     <div class="min_profil"></div>
 </div>
 
+
+
 <div class="bottomnav">
     <div class="min_profil" onclick="bringChatBoxToFront()"></div>
+    <div class="min_chat" onclick="refreshPage()"></div>
+    <div class="logs" onclick="showLogsPopup()"></div>
 </div>
 
 
+<div id="logsPopup" class="popup-logs">
+    <div class="popup-content"> </div>
 
+       <div class="log_box"></div>
+       
+        <div class="log_text">
+            <f style="margin-left: 10px;font:bolder;font-size: larger; color: rgb(217, 211, 211);">Uppdateringar</f>
+            <h5 style="color: rgb(193, 186, 186);">• ‎ ‎ Förbättring av chattar</h5>
+            <h5 style="color: rgb(193, 186, 186);">• ‎ ‎ Bättre login system</h5>
+            <h5 style="color: rgb(193, 186, 186);">• ‎ ‎ Nya meny ikoner</h5>
+        </div>
 
+      <span class="close" onclick="closeLogsPopup()"></span>
 
+   
+    </div>
+  </div>
 
 
 
