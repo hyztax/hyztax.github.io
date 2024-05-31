@@ -162,9 +162,10 @@
   </div>
 
 
-  <div class="Button_Style" onclick="ShowLogin()">
+  <div class="Button_Style" onclick="window.location.href='login.html'">
     <h2>Chatt</h2>
-  </div>
+</div>
+
 
   <div class="MainLoginBdy" id="MainLoginBdy">
     <button class="CloseLogin" onclick="ShowLogin('')">X</button>
@@ -223,43 +224,8 @@
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </div>
 
-  <!-- In your HTML file -->
-<script>
-  async function registerUser(username, email, password) {
-    const response = await fetch('http://localhost:3000/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ username, email, password }),
-    });
-    const data = await response.json();
-    console.log(data);
-  }
 
-  async function loginUser(username, password) {
-    const response = await fetch('http://localhost:3000/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ username, password }),
-    });
-    const data = await response.json();
-    console.log(data);
-  }
-
-  // Example usage
-  registerUser('exampleUser', 'example@example.com', 'password123');
-  loginUser('exampleUser', 'password123');
-</script>
-
-
-
-
-
-
-
+ 
 
 
 

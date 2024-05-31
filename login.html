@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+
+  <title>Tax Hood</title>
+
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+  <script src="java.js"></script>
+  <!-- Import this CDN to use icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+
+</head>
+
+<body>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+
+
+  <div class="Settings" id="Settings"> 
+    <button class="CloseSettings" onclick="ShowSettings()">x</button>
+    <div class="SettingsContent">
+      <div>
+        <div class="SettingParts">
+          <div id="OnlyLoggedIn">
+            <h2>Konto</h2>
+            <br>
+            <div class="AccountContent">
+              <div class="Flex-Row">
+                <p>Namn:</p>
+                <p class="AccountInfo" id="UsernameDis"></p>
+              </div>
+            </div>
+            <div class="AccountContent">
+              <div class="Flex-Row">
+                <p>Skapat:</p>
+                <p class="AccountInfo" id="KontoTimeDis"></p>
+              </div>
+            </div>
+            <br><br><br>
+            <button class="DelAccount" onclick="CreateAccount('Delete')">Radera Konto</button>
+          </div>
+        </div>
+
+        <div class="SettingParts">
+          <div id="OnlyLoggedOut">
+            <h2>Inget Konto</h2>
+            <br>
+            <div class="AccountContent">
+              <p>Det verkar som om att du inte är inloggad i ett konto. Logga in eller skapa ett konto!</p>
+            </div>
+          </div>
+          <div class="credits_title">Wall of names</div>
+          <div class="credit_content">Beso, Celsius, Maya, Mammoth, Aimee, Zienna, AFF3, Aria.xaa, Pawerman90 </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+ 
+
+  <button class="SettingsToggleBtn" onclick="ShowSettings()"></button>
+
+  <div style="margin-top: 10%;" class="Button_Style" onclick="ShowLogin()">
+    <h2>Login</h2>
+  </div>
+
+
+  <div class="MainLoginBdy" id="MainLoginBdy">
+    <button class="CloseLogin" onclick="ShowLogin('')">X</button>
+    <div class="LoginDis">
+      <h1>Logga In</h1>
+      <br><br>
+      <h3>Användarnamn</h3>
+      <input class="UsernameInput" id="UsernameLogin" placeholder="Användarnamn" type="text">
+      <br><br>
+      <h3>Lösenord</h3> 
+      <div class="Flex-Col"><input class="PasswordInput" id="LoginPassword" placeholder="Lösenord" type="password">
+        <button class="TogglePass" onclick="ShowPasword(this,'1')"></button></div>
+      <br><br>
+      <p class="ErrorNotif1" id="ErrorNotif1"></p>
+      <br>
+      <button class="LoginBtn" onclick="CreateAccount('Work')">Logga in</button>
+      <br><br>
+      <p>Har du inget konto?</p>
+      <br>
+      <button class="LoginBtn2" onclick="ShowLogin('CreateNew')">Skapa ett!</button>
+    </div>
+  </div>
+
+   
+
+  <div class="MainLoginBdy" id="MainLoginBdy2">
+    <button class="CloseLogin" onclick="ShowLogin('CloseNew')">X</button>
+    <div class="LoginDis">
+      <h1>Skapa Konto</h1>
+      <br><br>
+      <h3>Användarnamn</h3>
+      <input class="UsernameInput" id="Usrn" type="text" placeholder="Användarnamn">
+      <div style="margin: 5px;"></div>
+      <p style="color: rgb(224, 208, 63);">(Minst 5 tecken)</p>
+      <br><br>
+      <h3>Lösenord</h3>
+      <div class="Flex-Col"><input class="PasswordInput" id="LoginPassword2" type="password" placeholder="Lösenord">
+        <button class="TogglePass" onclick="ShowPasword(this,'2')"></button></div>
+        <div style="margin: 5px;"></div>
+        <p style="color: rgb(224, 208, 63);">(Minst 8 tecken)</p>
+
+      <br><br>
+      <p class="ErrorNotif2" id="ErrorNotif2"></p>
+      <br>
+      <button class="LoginBtn" onclick="CreateAccount('')">Skapa</button>
+    </div>
+  </div>
+
+  <div class="Versions">V.5.4</div>
+
+  <form action="login_process.php" method="post">
+
+
+
+
+
+</body>
+
+</html>
