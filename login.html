@@ -124,8 +124,31 @@
   <form action="login_process.php" method="post">
 
 
-
-
+    <script>
+        function submitLoginForm() {
+            var username = document.getElementById('UsernameLogin').value;
+            var password = document.getElementById('LoginPassword').value;
+    
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'login_process.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        console.log(xhr.responseText); // Log the response for debugging
+                        if (xhr.responseText.trim() === 'success') {
+                            window.location.href = 'welcome.php';
+                        } else {
+                            document.getElementById('ErrorNotif1').innerText = xhr.responseText;
+                        }
+                    } else {
+                        document.getElementById('ErrorNotif1').innerText = 'Error: ' + xhr.status;
+                    }
+                }
+            };
+            xhr.send('username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password));
+        }
+      </script>
 
 </body>
 

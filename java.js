@@ -301,3 +301,21 @@ app.listen(port, () => {
 //new code here 
 
 
+function submitLoginForm() {
+  var username = document.getElementById('UsernameLogin').value;
+  var password = document.getElementById('LoginPassword').value;
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'login_process.php', true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+          if (xhr.responseText.trim() === 'success') {
+              window.location.href = 'welcome.php';
+          } else {
+              document.getElementById('ErrorNotif1').innerText = xhr.responseText;
+          }
+      }
+  };
+  xhr.send('username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password));
+}

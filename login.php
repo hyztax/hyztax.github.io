@@ -1,52 +1,33 @@
 <?php
 session_start();
 
-// Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Check if username and password are set and not empty
-    if (isset($_POST["username"]) && isset($_POST["password"]) && !empty($_POST["username"]) && !empty($_POST["password"])) {
-        // Simulate database connection (replace with your actual database connection)
-        $db_username = "user123";
-        $db_password = "password123";
+    $db_host = "localhost";
+    $db_user = "id22250136_hyztax";
+    $db_password = "Hkrohn3241!";
+    $db_name = "id22250136_logincreate";
 
-        // Retrieve username and password from the form
-        $username = $_POST["username"];
-        $password = $_POST["password"];
+    $conn = new mysqli($db_host, $db_user, $db_password, $db_name);
 
-        // Check if username and password match
-        if ($username === $db_username && $password === $db_password) {
-            // Authentication successful
-            $_SESSION["username"] = $username;
-            header("Location: welcome.php");
-            exit;
-        } else {
-            // Authentication failed
-            $login_error = "Invalid username or password.";
-        }
-    } else {
-        // Username or password is missing
-        $login_error = "Please enter username and password.";
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
     }
+
+    $username = $conn->real_escape_string($_POST["username"]);
+    $password = $conn->real_escape_string($_POST["password"]);
+
+    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows == 1) {
+        $_SESSION["username"] = $username;
+        echo "success";
+    } else {
+        echo "Invalid username or password.";
+    }
+
+    $conn->close();
+} else {
+    echo "Invalid request.";
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body>
-    <h2>Login</h2>
-    <?php if (isset($login_error)) : ?>
-        <p><?php echo $login_error; ?></p>
-    <?php endif; ?>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username"><br>
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password"><br><br>
-        <input type="submit" value="Login">
-    </form>
-</body>
-</html>
