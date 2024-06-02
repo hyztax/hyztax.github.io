@@ -301,6 +301,8 @@ body {
     align-items: center;
     padding: 10px 0;
     border-bottom: 1px solid #272323;
+    cursor:pointer;
+    
 }
 .chat-item .avatar {
     width: 50px;
@@ -312,10 +314,12 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    cursor:pointer;
 }
 .chat-item .message {
     flex: 1;
     overflow: hidden;
+    cursor: pointer;
 }
 .chat-item .time {
     color: rgb(123, 119, 119);
@@ -466,6 +470,7 @@ z-index: 3;
     display: none;
     transition: left 0.5s ease; 
    overflow-x:hidden;
+   
 }
 
 #popup-overlay {
