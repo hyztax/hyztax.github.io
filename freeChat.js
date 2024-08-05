@@ -477,20 +477,41 @@ window.onload = initializeMenuState;
 
 
 //new code below here 
-function updateCounter() {
-    var now = new Date();
-    var seconds = now.getSeconds(); // Seconds from 0 to 59
-    var minutes = now.getMinutes(); // Minutes from 0 to 59
-    var hours = now.getHours();     // Hours from 0 to 23
-    var totalTimeInMinutes = minutes + hours * 60; // Total minutes elapsed today
-    var timeString;
 
-    if (totalTimeInMinutes < 60) {
-        timeString = totalTimeInMinutes + ' min';
+
+function updateCounter() {
+    // Define the start time 3 weeks ago
+    var startTime = new Date();
+    startTime.setDate(startTime.getDate() - 21); // 3 weeks ago
+
+    var now = new Date();
+    var elapsedTime = now - startTime; // Difference in milliseconds
+
+    // Convert milliseconds to different time units
+    var seconds = Math.floor(elapsedTime / 1000); // Total seconds
+    var minutes = Math.floor(seconds / 60); // Total minutes
+    var hours = Math.floor(minutes / 60); // Total hours
+    var days = Math.floor(hours / 24); // Total days
+    var weeks = Math.floor(days / 7); // Total weeks
+
+    // Calculate remaining days, hours, and minutes
+    days = days % 7; // Days remaining after full weeks
+    hours = hours % 24; // Hours remaining after full days
+    minutes = minutes % 60; // Minutes remaining after full hours
+
+    // Construct the time string
+    var timeString;
+    if (weeks > 0) {
+        timeString = weeks + ' veckor';
+    } else if (days > 0) {
+        timeString = days + ' dagar';
+    } else if (hours > 0) {
+        timeString = hours + ' h';
     } else {
-        timeString = Math.floor(totalTimeInMinutes / 60) + ' h';
+        timeString = minutes + ' min';
     }
-    
+
+    // Update the text content of the HTML element with class 'time'
     document.querySelector('.time').textContent = timeString;
 }
 
@@ -499,6 +520,7 @@ setInterval(updateCounter, 1000);
 
 // Initial update
 updateCounter();
+
 
 //göra en knapp i menyn som visar en pop up med bug fixes!
 
