@@ -549,3 +549,10 @@ function showLogsPopup() {
   }
   
   
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('emojiIcon').addEventListener('click', function() {
+        var reactionsDiv = document.querySelector('.reactions');
+        reactionsDiv.classList.toggle('hidden');
+    });
+});

@@ -543,3 +543,53 @@ z-index: 3;
     color: rgb(255, 255, 255);
     font-size: 12px;
 }
+
+.LikeMsg {
+    position: absolute;
+    color: wheat;
+    border-radius: 5px;
+    margin-top: 115px;
+    margin-left: 135px;
+    z-index: 3;
+    transform: rotate(5deg);
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.LikeMsg:hover {
+    transform: rotate(8deg) scale(1.03); /* Ensure rotation is maintained on hover */
+    filter: brightness(1.1); 
+}
+
+/* If the .LikeMsg element contains an img element that you want to scale separately */
+.LikeMsg img {
+    transition: transform 0.5s ease, filter 0.5s ease; /* Add transition to the image */
+}
+
+.LikeMsg:hover img {
+    transform: scale(1.03);
+    filter: brightness(1.06);
+}
+
+
+.GoToFriends{
+    color:rgba(173, 165, 165, 0.904) ;
+    margin-top: 470px;
+    font-size: small;
+   text-align: center;
+    
+}
+
+.reactions {
+    background-color: rgb(97, 94, 94); 
+    color: green; 
+    margin-top: -59px;
+    height: 20px;
+    width: 100px;
+    border: 2px solid #000000; 
+    transform: rotate(-8deg); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 8px;
+    visibility:hidden;
+}
