@@ -550,7 +550,6 @@ z-index: 3;
     border-radius: 5px;
     margin-top: 115px;
     margin-left: 135px;
-    z-index: 3;
     transform: rotate(5deg);
     transition: transform 0.2s ease, filter 0.2s ease;
 }
@@ -567,7 +566,6 @@ z-index: 3;
 
 .LikeMsg:hover img {
     transform: scale(1.03);
-    filter: brightness(1.06);
 }
 
 
@@ -581,8 +579,7 @@ z-index: 3;
 
 .reactions {
     background-color: rgb(97, 94, 94); 
-    color: green; 
-    margin-top: -59px;
+    margin-top: -56px;
     height: 20px;
     width: 100px;
     border: 2px solid #000000; 
@@ -592,4 +589,5 @@ z-index: 3;
     justify-content: center; 
     border-radius: 8px;
     visibility:hidden;
+    
 }
