@@ -555,7 +555,7 @@ z-index: 3;
 }
 
 .LikeMsg:hover {
-    transform: rotate(8deg) scale(1.03); /* Ensure rotation is maintained on hover */
+    transform: rotate(10deg) scale(1.03); /* Ensure rotation is maintained on hover */
     filter: brightness(1.1); 
 }
 
@@ -572,22 +572,28 @@ z-index: 3;
 .GoToFriends{
     color:rgba(173, 165, 165, 0.904) ;
     margin-top: 470px;
-    font-size: small;
-   text-align: center;
+    font-size:smaller;
+    text-align: center;
     
 }
 
 .reactions {
-    background-color: rgb(97, 94, 94); 
-    margin-top: -56px;
-    height: 20px;
-    width: 100px;
-    border: 2px solid #000000; 
-    transform: rotate(-8deg); 
+    background-color: rgb(8, 7, 7); 
+    margin-top: -395px;
+    margin-left: 140px;
+    height: 25px;
+    width: 90px;
+    border: 2px solid #302e2e; 
     display: flex; 
     align-items: center; 
     justify-content: center; 
-    border-radius: 8px;
+    border-radius: 12px;
     visibility:hidden;
-    
+    transition: visibility 0.3s ease;
+    /* Changed transition property to visibility */
 }
+
+.reactions.visible {
+    visibility: visible;
+}
+
