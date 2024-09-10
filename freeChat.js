@@ -549,3 +549,7 @@ function showLogsPopup() {
   }
   
   
+  document.getElementById('emojiImg').addEventListener('click', function() {
+    var reactionsDiv = document.getElementById('reactionsDiv');
+    reactionsDiv.classList.toggle('visible');
+});
