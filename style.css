@@ -602,6 +602,19 @@ body {
 }
 
 
+.container p {
+  display: block;
+  width: 100%;
+  border-bottom: 2px solid black;
+  line-height: 0.1em; 
+}
+
+.ScrollAble {
+  width: auto;
+}
+
+
+
 
 .ScrollAble::-webkit-scrollbar {
   background-color: rgb(71, 70, 70);
@@ -780,6 +793,7 @@ body {
 
 .Settings h2 {
   text-align: left;
+  font-family:lucida;
 }
 
 .PasswordShow {

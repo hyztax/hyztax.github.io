@@ -4,7 +4,7 @@ session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $db_host = "localhost";
     $db_user = "id22250136_hyztax";
-    $db_password = "Hkrohn3241!";
+    $db_password = "test1234!";
     $db_name = "id22250136_logincreate";
 
     $conn = new mysqli($db_host, $db_user, $db_password, $db_name);
