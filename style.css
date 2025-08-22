@@ -833,45 +833,42 @@ body {
 }
 
 /* New */
-/* Container for existing games */
-.games-container {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 30px; /* Space before the NEW section */
-}
-
 /* NEW game section */
 .new-game-section {
   display: flex;
-  justify-content: center; /* Centers the NEW game */
+  justify-content: center;
+  margin-bottom: 25px; /* space between NEW and existing games */
 }
 
-.new-game {
+.new-game-section .new-game {
   position: relative;
   display: block;
   width: 400px;
   height: 200px;
- margin: 12px;
+  max-width: 90%;      /* responsive */
+  margin: 0 auto;
   overflow: hidden;
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(151, 149, 149, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
+  background: #222;
 }
 
-.new-game:hover {
+.new-game-section .new-game:hover {
   transform: scale(1.05);
   box-shadow: 0 0 30px rgba(160, 160, 160, 0.7);
 }
 
-.game-image {
+.new-game-section .game-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   filter: brightness(0.9) contrast(1.1);
 }
 
-.new-label {
+.new-game-section .new-label {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -883,4 +880,53 @@ body {
   font-size: 16px;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
   text-transform: uppercase;
+}
+
+/* Existing games row */
+.games-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.games-container .game {
+  width: 256px;
+  height: 256px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.games-container .game:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.games-container .game img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 500px) {
+  .new-game-section .new-game {
+    width: 90%;
+    height: 150px;
+  }
+
+  .games-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .games-container .game {
+    width: 80%;
+    height: auto;
+    margin-bottom: 15px;
+  }
 }
