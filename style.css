@@ -930,3 +930,28 @@ body {
     margin-bottom: 15px;
   }
 }
+
+.new-game-section .new-game {
+  position: relative;
+  display: block;
+  width: 400px;
+  height: 200px;
+  max-width: 90%;      /* responsive on smaller screens */
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(151, 149, 149, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  background: #222;
+}
+
+/* Make image fit the container exactly */
+.new-game-section .game-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* <-- changed from cover to contain */
+  display: block;
+  filter: brightness(0.9) contrast(1.1);
+  background: #222;      /* in case image doesn’t fill all space */
+}
